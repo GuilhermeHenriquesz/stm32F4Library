@@ -12,10 +12,9 @@ void togglePin(Pin* pin){
 	pin->porta->ODR ^= 1 << pin->pino;
 }
 
-void pinStart(Pin **pin, GPIO_TypeDef* porta, int pino){
-	*pin = malloc(sizeof(Pin));
-	(*pin)->porta = porta;
-	(*pin)->pino = pino;
+void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino){
+	pin->porta = porta;
+	pin->pino = pino;
 }
 
 void setPullDown(Pin* pin){
