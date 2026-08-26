@@ -1,5 +1,7 @@
 #include "gpioHandler.h"
 
+#define MS 1000
+
 void writeHigh(Pin* pin){
 	pin->porta->ODR |= 1 << pin->pino;
 }
@@ -10,6 +12,13 @@ void writeLow(Pin* pin){
 
 void togglePin(Pin* pin){
 	pin->porta->ODR ^= 1 << pin->pino;
+}
+
+void virtualPwmWrite(Pin* pin, int value){
+	writeHigh(pin);
+	for(int i = 0; i < value*MS/10; i++);
+	writeLow(pin);
+	for(int i = 0; i < (100 - value)*MS/10; i++);
 }
 
 void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino){
