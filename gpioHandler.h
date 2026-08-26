@@ -10,7 +10,7 @@ typedef struct pin{
 }Pin;
 void writeHigh(Pin* pin);
 void writeLow(Pin* pin);
-void pinStart(Pin **pin, GPIO_TypeDef* porta, int pino);
+void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino);
 int readPin(Pin* pin);
 
 #endif
