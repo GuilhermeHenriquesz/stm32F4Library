@@ -8,6 +8,9 @@ typedef struct pin{
 	GPIO_TypeDef* porta;
 	int pino;
 }Pin;
+
+void delay(int ms);
+
 void writeHigh(Pin* pin);
 
 void writeLow(Pin* pin);

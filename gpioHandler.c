@@ -2,6 +2,10 @@
 
 #define MS 1000
 
+void delay(int ms){
+	for(int i = 0; i < ms*MS; i++);
+}
+
 void writeHigh(Pin* pin){
 	pin->porta->ODR |= 1 << pin->pino;
 }
