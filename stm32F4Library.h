@@ -3,5 +3,6 @@
 
 #include "gpioHandler.h"
 #include "usartHandler.h"
+#include "interruptHandler.h"
 
 #endif
