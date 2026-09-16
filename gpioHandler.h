@@ -24,6 +24,8 @@ void writeLow(Pin* pin);
 
 void togglePin(Pin* pin);
 
+uint8_t getPinStatus(Pin* pin);
+
 void virtualPwmWrite(Pin* pin, uint8_t value);
 //@Param value -> value between 0 and 100 that represents the percentage for PWM value
 

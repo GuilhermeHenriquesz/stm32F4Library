@@ -20,6 +20,13 @@ void togglePin(Pin* pin){
 	pin->port->ODR ^= 1 << pin->index;
 }
 
+uint8_t getPinStatus(Pin* pin){
+	uint32_t pinStatus = 1 << pin->index;
+	pinStatus &= pin->port->ODR;
+	if(!pinStatus) return 0;
+	return 1;
+}
+
 void virtualPwmWrite(Pin* pin, uint8_t value){
 	writeHigh(pin);
 	for(uint8_t i = 0; i < value*MS/10; i++);
