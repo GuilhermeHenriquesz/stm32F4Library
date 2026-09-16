@@ -2,6 +2,8 @@
 
 #define MS 1000
 
+static int ports[11] = {0,0,0,0,0,0,0,0,0,0,0};
+
 void delay(int ms){
 	for(volatile int i = 0; i < ms*MS; i++);
 }
@@ -25,8 +27,17 @@ void virtualPwmWrite(Pin* pin, int value){
 	for(int i = 0; i < (100 - value)*MS/10; i++);
 }
 
-void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino){
-	if 
+void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino, int mode){
+	index = ((uint32_t)porta - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
+
+	if(ports[index] != 1) {
+		RCC->AHB1ENR |= 1 << index; //Activate port clock
+		ports[index] = 1;
+	}
+
+	porta->MODER &= ~(0b11<<pino);
+	porta->MODER |= mode<<pino;
+	
 	pin->porta = porta;
 	pin->pino = pino;
 }
