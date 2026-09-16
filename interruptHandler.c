@@ -12,7 +12,7 @@ void interruptPin(Pin* pin, uint8_t edge, uint8_t priority, function func){
 
     SYSCFG->EXTICR[index] |= (port<<shift);
 
-    switch edge{
+    switch (edge){
         case 0:
             EXTI->FTSR |= 1 << pin->pino;
             break;
@@ -27,7 +27,7 @@ void interruptPin(Pin* pin, uint8_t edge, uint8_t priority, function func){
     EXTI->IMR |= 1 << pin->pino;
     
     if (pin->pino < 5){
-        switch pin->pino{
+        switch (pin->pino){
             case 0:
                 NVIC_SetPriority(EXTI0_IRQn, priority);
                 NVIC_EnableIRQ(EXTI0_IRQn);

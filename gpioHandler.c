@@ -26,18 +26,19 @@ void virtualPwmWrite(Pin* pin, int value){
 }
 
 void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino){
+	if 
 	pin->porta = porta;
 	pin->pino = pino;
 }
 
 void setPullDown(Pin* pin){
-	pin->porta->PUPDR &= ~(1 << pin*2);
-	pin->porta->PUPDR |= 0b10 << pin*2;
+	pin->porta->PUPDR &= ~(1 << pin->pino*2);
+	pin->porta->PUPDR |= 0b10 << pin->pino*2;
 }
 
 void setPullUp(Pin* pin){
-	pin->porta->PUPDR &= ~(0b10 << pin*2);
-	pin->porta->PUPDR |= 1 << pin*2;
+	pin->porta->PUPDR &= ~(0b10 << pin->pino*2);
+	pin->porta->PUPDR |= 1 << pin->pino*2;
 }
 
 int readPin(Pin* pin) {
