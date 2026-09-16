@@ -6,7 +6,7 @@
 
 typedef struct pin{
 	GPIO_TypeDef* port;
-	int index;
+	uint8_t index;
 }Pin;
 
 enum{
@@ -16,7 +16,7 @@ enum{
 	ANALOG
 }
 
-void delay(int ms);
+void delay(uint8_t ms);
 
 void writeHigh(Pin* pin);
 
@@ -24,15 +24,15 @@ void writeLow(Pin* pin);
 
 void togglePin(Pin* pin);
 
-void virtualPwmWrite(Pin* pin, int value);
+void virtualPwmWrite(Pin* pin, uint8_t value);
 //@Param value -> value between 0 and 100 that represents the percentage for PWM value
 
-void pinStart(Pin *pin, GPIO_TypeDef* port, int index, int mode);
+void pinStart(Pin *pin, GPIO_TypeDef* port, uint8_t index, uint8_t mode);
 
 void setPullDown(Pin* pin)
 
 void setPullUp(Pin* pin)
 
-int readPin(Pin* pin);
+uint8_t readPin(Pin* pin);
 
 #endif
