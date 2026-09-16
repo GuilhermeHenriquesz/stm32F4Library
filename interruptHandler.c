@@ -6,28 +6,28 @@ void interruptiOn(void){
 }
 
 void interruptPin(Pin* pin, uint8_t edge, uint8_t priority, function func){
-    uint8_t index = pin->pino / 4;
-    uint8_t shift = (pin->pino % 4) * 4;
-    uint8_t port = ((uint32_t)(pin->porta) - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
+    uint8_t index = pin->index / 4;
+    uint8_t shift = (pin->index % 4) * 4;
+    uint8_t port = ((uint32_t)(pin->port) - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
 
     SYSCFG->EXTICR[index] |= (port<<shift);
 
     switch (edge){
         case 0:
-            EXTI->FTSR |= 1 << pin->pino;
+            EXTI->FTSR |= 1 << pin->index;
             break;
         case 1:
-            EXTI->RTSR |= 1 << pin->pino;
+            EXTI->RTSR |= 1 << pin->index;
             break;
         case 2:
-            EXTI->FTSR |= 1 << pin->pino;
-            EXTI->RTSR |= 1 << pin->pino;
+            EXTI->FTSR |= 1 << pin->index;
+            EXTI->RTSR |= 1 << pin->index;
     }
 
-    EXTI->IMR |= 1 << pin->pino;
+    EXTI->IMR |= 1 << pin->index;
     
-    if (pin->pino < 5){
-        switch (pin->pino){
+    if (pin->index < 5){
+        switch (pin->index){
             case 0:
                 NVIC_SetPriority(EXTI0_IRQn, priority);
                 NVIC_EnableIRQ(EXTI0_IRQn);
@@ -54,7 +54,7 @@ void interruptPin(Pin* pin, uint8_t edge, uint8_t priority, function func){
                 ISRs[4] = func;
         }
     }
-    else if (pin->pino < 10)
+    else if (pin->index < 10)
         NVIC_SetPriority(EXTI9_5_IRQn, priority);
         NVIC_EnableIRQ(EXTI9_5_IRQn);
         ISRs[5] = func;
