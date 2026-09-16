@@ -31,9 +31,9 @@ void virtualPwmWrite(Pin* pin, uint8_t value);
 
 void pinStart(Pin *pin, GPIO_TypeDef* port, uint8_t index, uint8_t mode);
 
-void setPullDown(Pin* pin)
+void setPullDown(Pin* pin);
 
-void setPullUp(Pin* pin)
+void setPullUp(Pin* pin);
 
 uint8_t readPin(Pin* pin);
 
