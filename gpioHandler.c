@@ -9,15 +9,15 @@ void delay(int ms){
 }
 
 void writeHigh(Pin* pin){
-	pin->porta->ODR |= 1 << pin->pino;
+	pin->port->ODR |= 1 << pin->index;
 }
 
 void writeLow(Pin* pin){
-	pin->porta->ODR &= ~(1 << pin->pino);
+	pin->port->ODR &= ~(1 << pin->index);
 }
 
 void togglePin(Pin* pin){
-	pin->porta->ODR ^= 1 << pin->pino;
+	pin->port->ODR ^= 1 << pin->index;
 }
 
 void virtualPwmWrite(Pin* pin, int value){
@@ -27,33 +27,33 @@ void virtualPwmWrite(Pin* pin, int value){
 	for(int i = 0; i < (100 - value)*MS/10; i++);
 }
 
-void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino, int mode){
-	index = ((uint32_t)porta - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
+void pinStart(Pin *pin, GPIO_TypeDef* port, int index, int mode){
+	index = ((uint32_t)port - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
 
 	if(ports[index] != 1) {
 		RCC->AHB1ENR |= 1 << index; //Activate port clock
 		ports[index] = 1;
 	}
 
-	porta->MODER &= ~(0b11<<pino);
-	porta->MODER |= mode<<pino;
-	
-	pin->porta = porta;
-	pin->pino = pino;
+	port->MODER &= ~(0b11<<index);
+	port->MODER |= mode<<index;
+
+	pin->port = port;
+	pin->index = index;
 }
 
 void setPullDown(Pin* pin){
-	pin->porta->PUPDR &= ~(1 << pin->pino*2);
-	pin->porta->PUPDR |= 0b10 << pin->pino*2;
+	pin->port->PUPDR &= ~(1 << pin->index*2);
+	pin->port->PUPDR |= 0b10 << pin->index*2;
 }
 
 void setPullUp(Pin* pin){
-	pin->porta->PUPDR &= ~(0b10 << pin->pino*2);
-	pin->porta->PUPDR |= 1 << pin->pino*2;
+	pin->port->PUPDR &= ~(0b10 << pin->index*2);
+	pin->port->PUPDR |= 1 << pin->index*2;
 }
 
 int readPin(Pin* pin) {
-	if(((pin->porta->IDR) & (1 << pin->pino)) != 0)
+	if(((pin->port->IDR) & (1 << pin->index)) != 0)
 		return 1;
 	else return 0;
 }

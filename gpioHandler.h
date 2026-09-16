@@ -5,8 +5,8 @@
 #include <stdlib.h>
 
 typedef struct pin{
-	GPIO_TypeDef* porta;
-	int pino;
+	GPIO_TypeDef* port;
+	int index;
 }Pin;
 
 enum{
@@ -27,7 +27,7 @@ void togglePin(Pin* pin);
 void virtualPwmWrite(Pin* pin, int value);
 //@Param value -> value between 0 and 100 that represents the percentage for PWM value
 
-void pinStart(Pin *pin, GPIO_TypeDef* porta, int pino, int mode);
+void pinStart(Pin *pin, GPIO_TypeDef* port, int index, int mode);
 
 void setPullDown(Pin* pin)
 
