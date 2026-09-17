@@ -1,0 +1,43 @@
+\doxysection{interrupt\+Handler.\+h}
+\hypertarget{interruptHandler_8h_source}{}\label{interruptHandler_8h_source}\doxymbox{\hyperlink{interruptHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INTERRUPT\_HANDLER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INTERRUPT\_HANDLER\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{gpioHandler_8h}{gpioHandler.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ void\ (*function)(void);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ function\ ISRs[7];}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00024\ \ \ \ \ FALLING,}
+\DoxyCodeLine{00025\ \ \ \ \ RISING,}
+\DoxyCodeLine{00026\ \ \ \ \ FALLING\_AND\_RISING}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//Functions\ to\ handle\ with\ interruptions}}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ EXTI0\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ EXTI1\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ EXTI2\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ EXTI3\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ EXTI4\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ EXTI9\_5\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ EXTI15\_10\_IRQHandler(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ interruptiOn(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ interruptPin(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ edge,\ uint8\_t\ priority,\ function\ func);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

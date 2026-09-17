@@ -1,0 +1,47 @@
+\doxysection{gpio\+Handler.\+h}
+\hypertarget{gpioHandler_8h_source}{}\label{gpioHandler_8h_source}\doxymbox{\hyperlink{gpioHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ GPIO\_HANDLER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ GPIO\_HANDLER\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structpin}{pin}}\{}
+\DoxyCodeLine{00022\ \ \ \ \ GPIO\_TypeDef*\ \doxymbox{\hyperlink{structpin_a5ce5252516bd08dcb164ce999e0ea1a1}{port}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ uint8\_t\ \doxymbox{\hyperlink{structpin_a3aed8e20f29b2f38880a07c3f73b5128}{index}};\ }
+\DoxyCodeLine{00024\ \}\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00031\ \ \ \ \ INPUT,}
+\DoxyCodeLine{00032\ \ \ \ \ OUTPUT,}
+\DoxyCodeLine{00033\ \ \ \ \ ALTERNATE,}
+\DoxyCodeLine{00034\ \ \ \ \ ANALOG}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ delay(uint32\_t\ ms);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ writeHigh(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ writeLow(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ togglePin(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ uint8\_t\ getPinStatus(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ virtualPwmWrite(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ value);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ pinStart(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}\ *\doxymbox{\hyperlink{structpin}{pin}},\ GPIO\_TypeDef*\ port,\ uint8\_t\ index,\ uint8\_t\ mode);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ setPullDown(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ setPullUp(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00112\ uint8\_t\ readPin(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,275 @@
+\doxysection{gpio\+Handler.\+h File Reference}
+\hypertarget{gpioHandler_8h}{}\label{gpioHandler_8h}\index{gpioHandler.h@{gpioHandler.h}}
+
+
+Handle with GPIO.  
+
+
+{\ttfamily \+\#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structpin}{pin}}
+\begin{DoxyCompactList}\small\item\em Abstract pins of GPIOs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \doxymbox{\hyperlink{structpin}{pin}} \doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}
+\begin{DoxyCompactList}\small\item\em Abstract pins of GPIOs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{gpioHandler_8h_aae5ed1f2ebd6ec332102c4f40bf46369}{enum }}
+\begin{DoxyCompactList}\small\item\em Enumerate pin modes to provide more code understandment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum  \{ ... \}  \doxymbox{\hyperlink{gpioHandler_8h_acb5a9898b0a5ed8695686b5ea2231bb7}{delay}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Handle with specific delays. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_afac684914a9c0d5d3fda6a1b3fac0cf2}{write\+High}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Write high state in a output pin. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a2821ea10e2e3d00fa5f2908309454731}{write\+Low}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Write low state in a output pin. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a75d8b8f0d0cb8d42f140e7fd14a2cef5}{toggle\+Pin}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Alternate the state in a output pin. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{gpioHandler_8h_a579dccbeb1f944a7cfc52deeb5455881}{get\+Pin\+Status}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Get the status of a output pin. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a96238e2b428d2a115ea7dff223d2e53b}{virtual\+Pwm\+Write}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin, uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write a pwm in software in a gpio pin. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a66097f7bf35e3caade8d18e25e978b40}{pin\+Start}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin, GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}port, uint8\+\_\+t index, uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Start the struct pin, set the mode of the pin and enable the pin port clock. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a72938a63988db1169dbf06233c812da7}{set\+Pull\+Down}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Set pull down resistor to a input pin. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a6542bc2f5bd28b1f23cd9ae34a4c98f0}{set\+Pull\+Up}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Set pull up resistor to a input pin. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{gpioHandler_8h_ac0a41e1bbc23adfb37877f09263a7413}{read\+Pin}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Read a input pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{gpioHandler_8h_ab81ca9153c95d55639b4ab520bb2aa4d}\label{gpioHandler_8h_ab81ca9153c95d55639b4ab520bb2aa4d} 
+{\bfseries INPUT}
+\item 
+\Hypertarget{gpioHandler_8h_a3198f9593a6b56e6fc4678a14d413ff1}\label{gpioHandler_8h_a3198f9593a6b56e6fc4678a14d413ff1} 
+{\bfseries OUTPUT}
+\item 
+\Hypertarget{gpioHandler_8h_a19ac06159f9a285a3ea460ca28f3a17f}\label{gpioHandler_8h_a19ac06159f9a285a3ea460ca28f3a17f} 
+{\bfseries ALTERNATE}
+\item 
+\Hypertarget{gpioHandler_8h_a42d7c1c08349aca53f56ef5b04af9b85}\label{gpioHandler_8h_a42d7c1c08349aca53f56ef5b04af9b85} 
+{\bfseries ANALOG}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with GPIO. 
+
+\begin{DoxyAuthor}{Authors}
+Fabio Henrique and Guilherme Henriques
+\end{DoxyAuthor}
+
+
+\begin{DoxyDate}{Date}
+2026-\/09-\/17 
+\end{DoxyDate}
+
+
+\label{gpioHandler_8h_doc-typedef-members}
+\Hypertarget{gpioHandler_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}\index{gpioHandler.h@{gpioHandler.h}!Pin@{Pin}}
+\index{Pin@{Pin}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{Pin}{Pin}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de} 
+typedef struct \doxymbox{\hyperlink{structpin}{pin}} \doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}}
+
+
+
+Abstract pins of GPIOs. 
+
+A struct that contains the port and the pin index 
+
+\label{gpioHandler_8h_doc-enum-members}
+\Hypertarget{gpioHandler_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gpioHandler_8h_aae5ed1f2ebd6ec332102c4f40bf46369}\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_aae5ed1f2ebd6ec332102c4f40bf46369} 
+anonymous enum}
+
+
+
+Enumerate pin modes to provide more code understandment. 
+
+In the stms registers, the bits that defines the GPIO pin operation is 0b00, 0b01, 0b10 and 0b11, or just 0, 1, 2 and 3 
+
+\label{gpioHandler_8h_doc-func-members}
+\Hypertarget{gpioHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{gpioHandler_8h_acb5a9898b0a5ed8695686b5ea2231bb7}\index{gpioHandler.h@{gpioHandler.h}!delay@{delay}}
+\index{delay@{delay}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_acb5a9898b0a5ed8695686b5ea2231bb7} 
+enum @302206043275153177023103113242045135311066264336 delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms}{}\end{DoxyParamCaption})}
+
+
+
+Handle with specific delays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & Time in ms to delay \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_a579dccbeb1f944a7cfc52deeb5455881}\index{gpioHandler.h@{gpioHandler.h}!getPinStatus@{getPinStatus}}
+\index{getPinStatus@{getPinStatus}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{getPinStatus()}{getPinStatus()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a579dccbeb1f944a7cfc52deeb5455881} 
+uint8\+\_\+t get\+Pin\+Status (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Get the status of a output pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A uint\+\_\+8 that indicates if the state is high(1) or low(0) 
+\end{DoxyReturn}
+\Hypertarget{gpioHandler_8h_a66097f7bf35e3caade8d18e25e978b40}\index{gpioHandler.h@{gpioHandler.h}!pinStart@{pinStart}}
+\index{pinStart@{pinStart}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{pinStart()}{pinStart()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a66097f7bf35e3caade8d18e25e978b40} 
+void pin\+Start (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{, }\item[{GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{port}{, }\item[{uint8\+\_\+t}]{index}{, }\item[{uint8\+\_\+t}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Start the struct pin, set the mode of the pin and enable the pin port clock. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be started \\
+\hline
+\doxymbox{\texttt{out}}  & {\em port} & Pins port \\
+\hline
+\doxymbox{\texttt{in}}  & {\em index} & Pins index \\
+\hline
+\doxymbox{\texttt{in}}  & {\em mode} & Pins mode \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_ac0a41e1bbc23adfb37877f09263a7413}\index{gpioHandler.h@{gpioHandler.h}!readPin@{readPin}}
+\index{readPin@{readPin}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{readPin()}{readPin()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_ac0a41e1bbc23adfb37877f09263a7413} 
+uint8\+\_\+t read\+Pin (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Read a input pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A uint\+\_\+8 that indicates if the pin is high(1) or low(0) 
+\end{DoxyReturn}
+\Hypertarget{gpioHandler_8h_a72938a63988db1169dbf06233c812da7}\index{gpioHandler.h@{gpioHandler.h}!setPullDown@{setPullDown}}
+\index{setPullDown@{setPullDown}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{setPullDown()}{setPullDown()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a72938a63988db1169dbf06233c812da7} 
+void set\+Pull\+Down (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Set pull down resistor to a input pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be setted \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_a6542bc2f5bd28b1f23cd9ae34a4c98f0}\index{gpioHandler.h@{gpioHandler.h}!setPullUp@{setPullUp}}
+\index{setPullUp@{setPullUp}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{setPullUp()}{setPullUp()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a6542bc2f5bd28b1f23cd9ae34a4c98f0} 
+void set\+Pull\+Up (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Set pull up resistor to a input pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be setted \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_a75d8b8f0d0cb8d42f140e7fd14a2cef5}\index{gpioHandler.h@{gpioHandler.h}!togglePin@{togglePin}}
+\index{togglePin@{togglePin}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{togglePin()}{togglePin()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a75d8b8f0d0cb8d42f140e7fd14a2cef5} 
+void toggle\+Pin (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Alternate the state in a output pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be alternated \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_a96238e2b428d2a115ea7dff223d2e53b}\index{gpioHandler.h@{gpioHandler.h}!virtualPwmWrite@{virtualPwmWrite}}
+\index{virtualPwmWrite@{virtualPwmWrite}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{virtualPwmWrite()}{virtualPwmWrite()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a96238e2b428d2a115ea7dff223d2e53b} 
+void virtual\+Pwm\+Write (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{, }\item[{uint8\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Write a pwm in software in a gpio pin. 
+
+\begin{DoxyWarning}{Warning}
+This function just work to a specific context, call this function and, after it, call another delay will break completely the logic of pwm
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be written \\
+\hline
+{\em value} & Percentage of PWM value -\/\texorpdfstring{$>$}{>} 0 to 100 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_afac684914a9c0d5d3fda6a1b3fac0cf2}\index{gpioHandler.h@{gpioHandler.h}!writeHigh@{writeHigh}}
+\index{writeHigh@{writeHigh}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{writeHigh()}{writeHigh()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_afac684914a9c0d5d3fda6a1b3fac0cf2} 
+void write\+High (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Write high state in a output pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpioHandler_8h_a2821ea10e2e3d00fa5f2908309454731}\index{gpioHandler.h@{gpioHandler.h}!writeLow@{writeLow}}
+\index{writeLow@{writeLow}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{writeLow()}{writeLow()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a2821ea10e2e3d00fa5f2908309454731} 
+void write\+Low (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Write low state in a output pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be written \\
+\hline
+\end{DoxyParams}

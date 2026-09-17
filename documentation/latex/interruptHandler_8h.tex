@@ -1,0 +1,107 @@
+\doxysection{interrupt\+Handler.\+h File Reference}
+\hypertarget{interruptHandler_8h}{}\label{interruptHandler_8h}\index{interruptHandler.h@{interruptHandler.h}}
+
+
+Handle with interruptions.  
+
+
+{\ttfamily \+\#include "{}gpio\+Handler.\+h"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interruptHandler_8h_a83e68104553ba40af8ccb86fe4c94c8a}\label{interruptHandler_8h_a83e68104553ba40af8ccb86fe4c94c8a} 
+typedef void(\texorpdfstring{$\ast$}{*}) {\bfseries function}(void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interruptHandler_8h_a97982e89310831bda3043d8df3f3e22c}{enum }}\{ {\bfseries FALLING}
+, {\bfseries RISING}
+, {\bfseries FALLING\+\_\+\+AND\+\_\+\+RISING}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerate to pin interrupt states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interruptHandler_8h_a17e9789a29a87d2df54f12b94dd1a0b6}\label{interruptHandler_8h_a17e9789a29a87d2df54f12b94dd1a0b6} 
+void {\bfseries EXTI0\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_a49cfdd46eb8d0ef3e1987514aa9343dc}\label{interruptHandler_8h_a49cfdd46eb8d0ef3e1987514aa9343dc} 
+void {\bfseries EXTI1\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}\label{interruptHandler_8h_ab5a1d9e9c8ef50e0cb9ddb5745a20a14} 
+void {\bfseries EXTI2\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_a30c045de96d18ec9c67a7b9e4350920f}\label{interruptHandler_8h_a30c045de96d18ec9c67a7b9e4350920f} 
+void {\bfseries EXTI3\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_a290cb997018c8d85d4b965b4a242842f}\label{interruptHandler_8h_a290cb997018c8d85d4b965b4a242842f} 
+void {\bfseries EXTI4\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_a7b2096b8b2643286dc3a7e5110e5ae85}\label{interruptHandler_8h_a7b2096b8b2643286dc3a7e5110e5ae85} 
+void {\bfseries EXTI9\+\_\+5\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_a738473a5b43f6c92b80ce1d3d6f77ed9}\label{interruptHandler_8h_a738473a5b43f6c92b80ce1d3d6f77ed9} 
+void {\bfseries EXTI15\+\_\+10\+\_\+\+IRQHandler} (void)
+\item 
+\Hypertarget{interruptHandler_8h_ab933c789821ce226d05cf7f66573ec00}\label{interruptHandler_8h_ab933c789821ce226d05cf7f66573ec00} 
+void {\bfseries interrupti\+On} (void)
+\begin{DoxyCompactList}\small\item\em Initiate Sys\+Cfg clock to enable interruptions. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{interruptHandler_8h_a87bc3ce7a770dbfa2cc6e49c5038560d}{interrupt\+Pin}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin, uint8\+\_\+t edge, uint8\+\_\+t priority, function func)
+\begin{DoxyCompactList}\small\item\em Set up the interruption in a pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with interruptions. 
+
+\begin{DoxyAuthor}{Authors}
+Fabio Henrique and Guilherme Henriques 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/09-\/17 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gpioHandler_8h}{gpio\+Handler.\+h} 
+\end{DoxySeeAlso}
+
+
+\label{interruptHandler_8h_doc-enum-members}
+\Hypertarget{interruptHandler_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{interruptHandler_8h_a97982e89310831bda3043d8df3f3e22c}\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily \label{interruptHandler_8h_a97982e89310831bda3043d8df3f3e22c} 
+anonymous enum}
+
+
+
+Enumerate to pin interrupt states. 
+
+In the stms registers, the bits that defines the edge of the interruption is setted by putting 1 in the falling register or rising register, this enum abstracts the values of the edge param of the interrupt\+Pin function \begin{DoxySeeAlso}{See also}
+\doxylink{interruptHandler_8h_a87bc3ce7a770dbfa2cc6e49c5038560d}{interrupt\+Pin} 
+\end{DoxySeeAlso}
+
+
+\label{interruptHandler_8h_doc-func-members}
+\Hypertarget{interruptHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{interruptHandler_8h_a87bc3ce7a770dbfa2cc6e49c5038560d}\index{interruptHandler.h@{interruptHandler.h}!interruptPin@{interruptPin}}
+\index{interruptPin@{interruptPin}!interruptHandler.h@{interruptHandler.h}}
+\doxysubsubsection{\texorpdfstring{interruptPin()}{interruptPin()}}
+{\footnotesize\ttfamily \label{interruptHandler_8h_a87bc3ce7a770dbfa2cc6e49c5038560d} 
+void interrupt\+Pin (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pin}{, }\item[{uint8\+\_\+t}]{edge}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{function}]{func}{}\end{DoxyParamCaption})}
+
+
+
+Set up the interruption in a pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be setted \\
+\hline
+{\em edge} & Edge to set up the interruption \\
+\hline
+{\em priority} & Priority to set up the interruption \\
+\hline
+{\em func} & Function to be executed when the interruption occurs \\
+\hline
+\end{DoxyParams}

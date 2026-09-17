@@ -1,0 +1,66 @@
+\doxysection{usart\+Handler.\+h File Reference}
+\hypertarget{usartHandler_8h}{}\label{usartHandler_8h}\index{usartHandler.h@{usartHandler.h}}
+
+
+Handle with USART.  
+
+
+{\ttfamily \+\#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{usartHandler_8h_a1ecf2e92d76b89a6a6e8e75e5eee55c3}{usart\+Send}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}porta, char c)
+\begin{DoxyCompactList}\small\item\em Send data by USART. \end{DoxyCompactList}\item 
+char \doxymbox{\hyperlink{usartHandler_8h_a63f71fb67914a746f705ed45fd4cedf0}{usart\+Get}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}porta)
+\begin{DoxyCompactList}\small\item\em Receive data by USART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with USART. 
+
+\begin{DoxyAuthor}{Authors}
+Fabio Henrique and Guilherme Henriques 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/09-\/17 
+\end{DoxyDate}
+
+
+\label{usartHandler_8h_doc-func-members}
+\Hypertarget{usartHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{usartHandler_8h_a63f71fb67914a746f705ed45fd4cedf0}\index{usartHandler.h@{usartHandler.h}!usartGet@{usartGet}}
+\index{usartGet@{usartGet}!usartHandler.h@{usartHandler.h}}
+\doxysubsubsection{\texorpdfstring{usartGet()}{usartGet()}}
+{\footnotesize\ttfamily \label{usartHandler_8h_a63f71fb67914a746f705ed45fd4cedf0} 
+char usart\+Get (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{porta}{}\end{DoxyParamCaption})}
+
+
+
+Receive data by USART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em porta} & GPIO port to receive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char Data to get 
+\end{DoxyReturn}
+\Hypertarget{usartHandler_8h_a1ecf2e92d76b89a6a6e8e75e5eee55c3}\index{usartHandler.h@{usartHandler.h}!usartSend@{usartSend}}
+\index{usartSend@{usartSend}!usartHandler.h@{usartHandler.h}}
+\doxysubsubsection{\texorpdfstring{usartSend()}{usartSend()}}
+{\footnotesize\ttfamily \label{usartHandler_8h_a1ecf2e92d76b89a6a6e8e75e5eee55c3} 
+void usart\+Send (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{porta}{, }\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Send data by USART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em porta} & GPIO port to send \\
+\hline
+{\em c} & Data to send \\
+\hline
+\end{DoxyParams}
