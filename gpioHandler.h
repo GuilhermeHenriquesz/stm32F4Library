@@ -16,7 +16,7 @@ enum{
 	ANALOG
 }
 
-void delay(uint8_t ms);
+void delay(uint32_t ms);
 
 void writeHigh(Pin* pin);
 
