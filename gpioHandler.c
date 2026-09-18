@@ -8,6 +8,10 @@ void delay(uint32_t ms){
 	for(volatile uint32_t i = 0; i < ms*MS; i++);
 }
 
+void microDelay(uint32_t microSecond){
+	for(volatile uint32_t i = 0; i < microSecond * MS/1000; i++);
+}
+
 void writeHigh(Pin* pin){
 	pin->port->ODR |= 1 << pin->index;
 }
