@@ -1,0 +1,35 @@
+\doxysection{seven\+Segments\+Handler.\+h}
+\hypertarget{sevenSegmentsHandler_8h_source}{}\label{sevenSegmentsHandler_8h_source}\doxymbox{\hyperlink{sevenSegmentsHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ SEVEN\_SEGMENTS\_HANDLER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SEVEN\_SEGMENTS\_HANDLER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{gpioHandler_8h}{gpioHandler.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00017\ \ \ \ \ ZERO\ =\ 0b1111110,}
+\DoxyCodeLine{00018\ \ \ \ \ ONE\ =\ 0b0110000,}
+\DoxyCodeLine{00019\ \ \ \ \ TWO\ =\ 0b1101101,}
+\DoxyCodeLine{00020\ \ \ \ \ THREE\ =\ 0b1111001,}
+\DoxyCodeLine{00021\ \ \ \ \ FOUR\ =\ 0b0110001,}
+\DoxyCodeLine{00022\ \ \ \ \ FIVE\ =\ 0b1011011,}
+\DoxyCodeLine{00023\ \ \ \ \ SIX\ =\ 0b1011111,}
+\DoxyCodeLine{00024\ \ \ \ \ SEVEN\ =\ 0b1000110,}
+\DoxyCodeLine{00025\ \ \ \ \ EIGHT\ =\ 0b1111111,}
+\DoxyCodeLine{00026\ \ \ \ \ NINE\ =\ 0b1111011,}
+\DoxyCodeLine{00027\ \ \ \ \ HEX\_A\ =\ 0b1110111,}
+\DoxyCodeLine{00028\ \ \ \ \ HEX\_B\ =\ 0b0011111,}
+\DoxyCodeLine{00029\ \ \ \ \ HEX\_C\ =\ 0b1001110,}
+\DoxyCodeLine{00030\ \ \ \ \ HEX\_D\ =\ 0b0111101,}
+\DoxyCodeLine{00031\ \ \ \ \ HEX\_E\ =\ 0b1001111,}
+\DoxyCodeLine{00032\ \ \ \ \ HEX\_F\ =\ 0b1000111,}
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ writeInDisplay(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ pins,\ uint8\_t\ number);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ startDisplayPins(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}\ *pins);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

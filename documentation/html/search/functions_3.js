@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pinstart_0',['pinStart',['../gpioHandler_8h.html#a66097f7bf35e3caade8d18e25e978b40',1,'gpioHandler.c']]]
+  ['microdelay_0',['microDelay',['../gpioHandler_8h.html#a95c290c60a77a6c9ae61b183f0d537ee',1,'gpioHandler.c']]]
 ];

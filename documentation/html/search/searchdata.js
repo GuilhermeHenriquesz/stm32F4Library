@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "dgiprstuvw",
+  0: "dgimprstuvw",
   1: "p",
   2: "gisu",
-  3: "dgiprstuvw",
+  3: "dgimprstuvw",
   4: "ip",
   5: "p"
 };

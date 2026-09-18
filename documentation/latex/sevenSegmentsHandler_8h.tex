@@ -1,0 +1,132 @@
+\doxysection{seven\+Segments\+Handler.\+h File Reference}
+\hypertarget{sevenSegmentsHandler_8h}{}\label{sevenSegmentsHandler_8h}\index{sevenSegmentsHandler.h@{sevenSegmentsHandler.h}}
+
+
+Handle with Seven Segment Display.  
+
+
+{\ttfamily \+\#include "{}gpio\+Handler.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{sevenSegmentsHandler_8h_a4dec249e8e8aa78e6c62c20790559920}{enum }}
+\begin{DoxyCompactList}\small\item\em Enum to set the numbers by the activation of the segments in display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+enum  \{ ... \}  \doxymbox{\hyperlink{sevenSegmentsHandler_8h_a6940e9d489f75e6475c364af1d15664a}{write\+In\+Display}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pins, uint8\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Write a number in seven segments display. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{sevenSegmentsHandler_8h_a610d907a8f5c897a493135241bc98a1a}{start\+Display\+Pins}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pins)
+\begin{DoxyCompactList}\small\item\em Set some pins preconfigured in GPIO port C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_ab284bdf3b32e4fc5d5db7feb9fcfb8f0}\label{sevenSegmentsHandler_8h_ab284bdf3b32e4fc5d5db7feb9fcfb8f0} 
+{\bfseries ZERO} = 0b1111110
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a2cb8470634cc90a55800ee95f967eade}\label{sevenSegmentsHandler_8h_a2cb8470634cc90a55800ee95f967eade} 
+{\bfseries ONE} = 0b0110000
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a0673b633b0851b14ed38bd96f5781290}\label{sevenSegmentsHandler_8h_a0673b633b0851b14ed38bd96f5781290} 
+{\bfseries TWO} = 0b1101101
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a3ad256299172be144b152fb1a36504b5}\label{sevenSegmentsHandler_8h_a3ad256299172be144b152fb1a36504b5} 
+{\bfseries THREE} = 0b1111001
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a0a04eb9a514fbe0829cf48049cc69fc7}\label{sevenSegmentsHandler_8h_a0a04eb9a514fbe0829cf48049cc69fc7} 
+{\bfseries FOUR} = 0b0110001
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a15577cd9eefc9ddd9e2815f341d7c720}\label{sevenSegmentsHandler_8h_a15577cd9eefc9ddd9e2815f341d7c720} 
+{\bfseries FIVE} = 0b1011011
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_ab2df19d47ce6f09ac1b502c209f4698f}\label{sevenSegmentsHandler_8h_ab2df19d47ce6f09ac1b502c209f4698f} 
+{\bfseries SIX} = 0b1011111
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a76b50d855e8fe3ebc7de8a9d0e35e5f8}\label{sevenSegmentsHandler_8h_a76b50d855e8fe3ebc7de8a9d0e35e5f8} 
+{\bfseries SEVEN} = 0b1000110
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a1562f79a436bcc552b7861b4c770ae72}\label{sevenSegmentsHandler_8h_a1562f79a436bcc552b7861b4c770ae72} 
+{\bfseries EIGHT} = 0b1111111
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_ad55f564ff7fc61ce422a41d50b47244f}\label{sevenSegmentsHandler_8h_ad55f564ff7fc61ce422a41d50b47244f} 
+{\bfseries NINE} = 0b1111011
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_aac84e0b07b0356b08d6092a177fc1ac6}\label{sevenSegmentsHandler_8h_aac84e0b07b0356b08d6092a177fc1ac6} 
+{\bfseries HEX\+\_\+A} = 0b1110111
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a76404bd119d993208b5b5eda53436b4e}\label{sevenSegmentsHandler_8h_a76404bd119d993208b5b5eda53436b4e} 
+{\bfseries HEX\+\_\+B} = 0b0011111
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_addb11ea5e16d5a1f3604b10be1a364b4}\label{sevenSegmentsHandler_8h_addb11ea5e16d5a1f3604b10be1a364b4} 
+{\bfseries HEX\+\_\+C} = 0b1001110
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a50a22df5724e34f4800c842b509854fe}\label{sevenSegmentsHandler_8h_a50a22df5724e34f4800c842b509854fe} 
+{\bfseries HEX\+\_\+D} = 0b0111101
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a4116354798fbd3b178e6754cf45b0ff4}\label{sevenSegmentsHandler_8h_a4116354798fbd3b178e6754cf45b0ff4} 
+{\bfseries HEX\+\_\+E} = 0b1001111
+\item 
+\Hypertarget{sevenSegmentsHandler_8h_a31e50c14c7b6858dac2c473e9cb08a7b}\label{sevenSegmentsHandler_8h_a31e50c14c7b6858dac2c473e9cb08a7b} 
+{\bfseries HEX\+\_\+F} = 0b1000111
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with Seven Segment Display. 
+
+\begin{DoxyAuthor}{Author}
+Fabio Henrique and Guilherme Henriques 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/09-\/17 
+\end{DoxyDate}
+
+
+\label{sevenSegmentsHandler_8h_doc-enum-members}
+\Hypertarget{sevenSegmentsHandler_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{sevenSegmentsHandler_8h_a4dec249e8e8aa78e6c62c20790559920}\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily \label{sevenSegmentsHandler_8h_a4dec249e8e8aa78e6c62c20790559920} 
+anonymous enum}
+
+
+
+Enum to set the numbers by the activation of the segments in display. 
+
+Each number has some segments to turn on/\+off, this enum represents which segments needs to be on/\+off 
+
+\label{sevenSegmentsHandler_8h_doc-func-members}
+\Hypertarget{sevenSegmentsHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{sevenSegmentsHandler_8h_a610d907a8f5c897a493135241bc98a1a}\index{sevenSegmentsHandler.h@{sevenSegmentsHandler.h}!startDisplayPins@{startDisplayPins}}
+\index{startDisplayPins@{startDisplayPins}!sevenSegmentsHandler.h@{sevenSegmentsHandler.h}}
+\doxysubsubsection{\texorpdfstring{startDisplayPins()}{startDisplayPins()}}
+{\footnotesize\ttfamily \label{sevenSegmentsHandler_8h_a610d907a8f5c897a493135241bc98a1a} 
+void start\+Display\+Pins (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pins}{}\end{DoxyParamCaption})}
+
+
+
+Set some pins preconfigured in GPIO port C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pins} & List of pins to be configured \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sevenSegmentsHandler_8h_a6940e9d489f75e6475c364af1d15664a}\index{sevenSegmentsHandler.h@{sevenSegmentsHandler.h}!writeInDisplay@{writeInDisplay}}
+\index{writeInDisplay@{writeInDisplay}!sevenSegmentsHandler.h@{sevenSegmentsHandler.h}}
+\doxysubsubsection{\texorpdfstring{writeInDisplay()}{writeInDisplay()}}
+{\footnotesize\ttfamily \label{sevenSegmentsHandler_8h_a6940e9d489f75e6475c364af1d15664a} 
+enum @044202350237360063360101037111045303236030355307 write\+In\+Display (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}}]{pins}{, }\item[{uint8\+\_\+t}]{number}{}\end{DoxyParamCaption})}
+
+
+
+Write a number in seven segments display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pins} & List of pins to be written \\
+\hline
+{\em number} & Number to write \\
+\hline
+\end{DoxyParams}

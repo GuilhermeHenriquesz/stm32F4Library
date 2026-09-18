@@ -26,7 +26,9 @@ typedef struct \doxymbox{\hyperlink{structpin}{pin}} \doxymbox{\hyperlink{gpioHa
 \begin{DoxyCompactItemize}
 \item 
 enum  \{ ... \}  \doxymbox{\hyperlink{gpioHandler_8h_acb5a9898b0a5ed8695686b5ea2231bb7}{delay}} (uint32\+\_\+t ms)
-\begin{DoxyCompactList}\small\item\em Handle with specific delays. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Handle with specific miliseconds delays. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{gpioHandler_8h_a95c290c60a77a6c9ae61b183f0d537ee}{micro\+Delay}} (uint32\+\_\+t micro\+Second)
+\begin{DoxyCompactList}\small\item\em Handle with specific microseconds delays. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{gpioHandler_8h_afac684914a9c0d5d3fda6a1b3fac0cf2}{write\+High}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
 \begin{DoxyCompactList}\small\item\em Write high state in a output pin. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{gpioHandler_8h_a2821ea10e2e3d00fa5f2908309454731}{write\+Low}} (\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}} \texorpdfstring{$\ast$}{*}pin)
@@ -114,7 +116,7 @@ enum @302206043275153177023103113242045135311066264336 delay (\begin{DoxyParamCa
 
 
 
-Handle with specific delays. 
+Handle with specific miliseconds delays. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -139,6 +141,21 @@ Get the status of a output pin.
 \begin{DoxyReturn}{Returns}
 A uint\+\_\+8 that indicates if the state is high(1) or low(0) 
 \end{DoxyReturn}
+\Hypertarget{gpioHandler_8h_a95c290c60a77a6c9ae61b183f0d537ee}\index{gpioHandler.h@{gpioHandler.h}!microDelay@{microDelay}}
+\index{microDelay@{microDelay}!gpioHandler.h@{gpioHandler.h}}
+\doxysubsubsection{\texorpdfstring{microDelay()}{microDelay()}}
+{\footnotesize\ttfamily \label{gpioHandler_8h_a95c290c60a77a6c9ae61b183f0d537ee} 
+void micro\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{micro\+Second}{}\end{DoxyParamCaption})}
+
+
+
+Handle with specific microseconds delays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em micro\+Second} & Time in micro second to delay \\
+\hline
+\end{DoxyParams}
 \Hypertarget{gpioHandler_8h_a66097f7bf35e3caade8d18e25e978b40}\index{gpioHandler.h@{gpioHandler.h}!pinStart@{pinStart}}
 \index{pinStart@{pinStart}!gpioHandler.h@{gpioHandler.h}}
 \doxysubsubsection{\texorpdfstring{pinStart()}{pinStart()}}

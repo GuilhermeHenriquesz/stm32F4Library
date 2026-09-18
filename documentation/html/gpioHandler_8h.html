@@ -138,7 +138,9 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acb5a9898b0a5ed8695686b5ea2231bb7" id="r_acb5a9898b0a5ed8695686b5ea2231bb7"><td class="memItemLeft">enum  { ... } &#160;</td><td class="memItemRight"><a class="el" href="#acb5a9898b0a5ed8695686b5ea2231bb7">delay</a> (uint32_t ms)</td></tr>
-<tr class="memdesc:acb5a9898b0a5ed8695686b5ea2231bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle with specific delays.  <br /></td></tr>
+<tr class="memdesc:acb5a9898b0a5ed8695686b5ea2231bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle with specific miliseconds delays.  <br /></td></tr>
+<tr class="memitem:a95c290c60a77a6c9ae61b183f0d537ee" id="r_a95c290c60a77a6c9ae61b183f0d537ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a95c290c60a77a6c9ae61b183f0d537ee">microDelay</a> (uint32_t microSecond)</td></tr>
+<tr class="memdesc:a95c290c60a77a6c9ae61b183f0d537ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle with specific microseconds delays.  <br /></td></tr>
 <tr class="memitem:afac684914a9c0d5d3fda6a1b3fac0cf2" id="r_afac684914a9c0d5d3fda6a1b3fac0cf2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afac684914a9c0d5d3fda6a1b3fac0cf2">writeHigh</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
 <tr class="memdesc:afac684914a9c0d5d3fda6a1b3fac0cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write high state in a output pin.  <br /></td></tr>
 <tr class="memitem:a2821ea10e2e3d00fa5f2908309454731" id="r_a2821ea10e2e3d00fa5f2908309454731"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2821ea10e2e3d00fa5f2908309454731">writeLow</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
@@ -225,7 +227,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Handle with specific delays. </p>
+<p>Handle with specific miliseconds delays. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ms</td><td>Time in ms to delay </td></tr>
@@ -258,6 +260,31 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A uint_8 that indicates if the state is high(1) or low(0) </dd></dl>
+
+</div>
+</div>
+<a id="a95c290c60a77a6c9ae61b183f0d537ee" name="a95c290c60a77a6c9ae61b183f0d537ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c290c60a77a6c9ae61b183f0d537ee">&#9670;&#160;</a></span>microDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void microDelay </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>microSecond</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle with specific microseconds delays. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">microSecond</td><td>Time in micro second to delay </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
