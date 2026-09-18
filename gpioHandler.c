@@ -1,6 +1,6 @@
 #include "gpioHandler.h"
 
-#define MS 1000
+#define MS 10000
 
 static uint8_t ports[11] = {0,0,0,0,0,0,0,0,0,0,0};
 
