@@ -35,20 +35,6 @@ enum{
 }
 
 /**
- * @brief Handle with specific miliseconds delays
- *
- * @param ms Time in ms to delay
- */
-void delay(uint32_t ms);
-
-/**
- * @brief Handle with specific microseconds delays
- *
- * @param microSecond Time in micro second to delay
- */
-void microDelay(uint32_t microSecond);
-
-/**
  * @brief Write high state in a output pin
  *
  * @param pin Pin to be written
