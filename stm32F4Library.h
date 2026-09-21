@@ -11,5 +11,8 @@
 #include "gpioHandler.h"
 #include "usartHandler.h"
 #include "interruptHandler.h"
+#include "timerHandler.h"
+#include "ultrasonicSensorHanlder.h"
+#include "sevenSegmentsHanlder.h"
 
 #endif

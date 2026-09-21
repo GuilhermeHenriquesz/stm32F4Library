@@ -9,6 +9,7 @@
 #define ULTRASONIC_SENSOR_H
 
 #include "gpioHandler.h"
+#include "timerHandler.h"
 
 /**
  * @brief Get the sensors free distance
