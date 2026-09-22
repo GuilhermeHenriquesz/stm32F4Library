@@ -11,11 +11,11 @@ void timerInit(void){
 void delay(uint32_t ms){
     if(!isInitiated) timerInit();
     TIM2->CNT = 0;
-	while(TIM2->CNT < delay*1000);
+	while(TIM2->CNT < ms*1000);
 }
 
 void microDelay(uint32_t microSeconds){
     if(!isInitiated) timerInit();
     TIM2->CNT = 0;
-	while(TIM2->CNT < delay);
+	while(TIM2->CNT < microSeconds);
 }

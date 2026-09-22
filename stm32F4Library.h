@@ -12,7 +12,7 @@
 #include "usartHandler.h"
 #include "interruptHandler.h"
 #include "timerHandler.h"
-#include "ultrasonicSensorHanlder.h"
-#include "sevenSegmentsHanlder.h"
+#include "ultrasonicSensorHandler.h"
+#include "sevenSegmentsHandler.h"
 
 #endif

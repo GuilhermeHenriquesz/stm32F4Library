@@ -7,6 +7,7 @@
 #ifndef TIMER_HANDLER_H
 #define TIMER_HANDLER_H
 
+#include "gpioHandler.h"
 
 static uint8_t isInitiated = 0;
 /**
@@ -27,3 +28,5 @@ void delay(uint32_t ms);
  * @param microSeconds microseconds to be delayed
  */
 void microDelay(uint32_t microSeconds);
+
+#endif

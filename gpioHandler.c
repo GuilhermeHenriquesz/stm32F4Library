@@ -31,7 +31,7 @@ void virtualPwmWrite(Pin* pin, uint8_t value){
 }
 
 void pinStart(Pin *pin, GPIO_TypeDef* port, uint8_t index, uint8_t mode){
-	indexPort = ((uint32_t)port - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
+	uint8_t indexPort = ((uint32_t)port - GPIOA_BASE) / (GPIOB_BASE - GPIOA_BASE);
 
 	if(ports[indexPort] != 1) {
 		RCC->AHB1ENR |= 1 << indexPort; //Activate port clock

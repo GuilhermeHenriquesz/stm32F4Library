@@ -8,7 +8,6 @@
 #ifndef ULTRASONIC_SENSOR_H
 #define ULTRASONIC_SENSOR_H
 
-#include "gpioHandler.h"
 #include "timerHandler.h"
 
 /**
@@ -19,3 +18,5 @@
  * @return uint32_t The free distance in cm
  */
 uint32_t getDistance(Pin* pinEmitter, Pin* pinReceiver);
+
+#endif

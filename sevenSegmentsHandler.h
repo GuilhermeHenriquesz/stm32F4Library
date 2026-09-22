@@ -30,7 +30,7 @@ enum{
     HEX_D = 0b0111101,
     HEX_E = 0b1001111,
     HEX_F = 0b1000111,
-}
+};
 
 /**
  * @brief Write a number in seven segments display
