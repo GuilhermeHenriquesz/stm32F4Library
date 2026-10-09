@@ -64,6 +64,14 @@ void togglePin(Pin* pin);
 uint8_t getPinStatus(Pin* pin);
 
 /**
+ * @brief Get the status of a port (Output or Input mode)
+ * 
+ * @param pin Pin to be read
+ * @return A uint16_t that indicates the status of the port's pins
+ */
+uint16_t getPortStatus(Pin* pin);
+
+/**
  * @brief Write a pwm in software in a gpio pin
  * @warning This function just work to a specific context, call this function and, after it, call another delay will break completely the logic of pwm
  *

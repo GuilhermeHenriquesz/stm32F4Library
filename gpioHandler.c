@@ -23,6 +23,10 @@ uint8_t getPinStatus(Pin* pin){
 	return 1;
 }
 
+uint16_t getPortStatus(Pin* pin){
+    return pin->port->IDR;
+}
+
 void virtualPwmWrite(Pin* pin, uint8_t value){
 	writeHigh(pin);
 	for(uint8_t i = 0; i < value*MS/10; i++);
