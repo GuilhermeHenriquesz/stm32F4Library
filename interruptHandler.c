@@ -57,12 +57,12 @@ void interruptPin(Pin* pin, uint8_t edge, uint8_t priority, function func){
     else if (pin->index < 10){
         NVIC_SetPriority(EXTI9_5_IRQn, priority);
         NVIC_EnableIRQ(EXTI9_5_IRQn);
-        ISRs[5] = func;
+        for (uint8_t i = 5; i <= 9; i++) if (i == pin->index) ISRs[i] = func;
     }
     else{
         NVIC_SetPriority(EXTI15_10_IRQn, priority);
         NVIC_EnableIRQ(EXTI15_10_IRQn);
-        ISRs[6] = func;
+        for (uint8_t i = 10; i <= 15; i++) if (i == pin->index) ISRs[i] = func;
     }
 }
 
@@ -112,11 +112,24 @@ void EXTI4_IRQHandler(void){
 }
 
 void EXTI9_5_IRQHandler(void){
-    if(ISRs[5] == NULL) return;
-    ISRs[5]();
+    
+    for (uint8_t i = 5; i <= 9; i++) {
+        uint32_t mask = 1U << i;
+        if (EXTI->PR & mask){
+            EXTI->PR = mask;
+            if (ISRs[i] != NULL) ISRs[i]();
+        }
+            
+    }
 }
 
 void EXTI15_10_IRQHandler(void){
-    if(ISRs[6] == NULL) return;
-    ISRs[6]();
+    for (uint8_t i = 10; i <= 15; i++) {
+        uint32_t mask = 1U << i;
+        if (EXTI->PR & mask){
+            EXTI->PR = mask;
+            if (ISRs[i] != NULL) ISRs[i]();
+        }
+            
+    }
 }
