@@ -13,7 +13,7 @@
 
 typedef void (*function)(void);
 
-static volatile function ISRs[7];
+static volatile function ISRs[16];
 
 /**
  * @brief Enumerate to pin interrupt states
