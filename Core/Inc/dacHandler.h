@@ -19,22 +19,15 @@ enum{
 };
 
 enum {
-    DHR8R1,
-    DHR8R2,
-    DHR12L1,
-    DHR12L2,
-    DHR12R1,
-    DHR12R2,
+    DHR8R,
+    DHR12L,
+    DHR12R,
     DHR8RD,
     DHR12LD,
     DHR12RD
 
 };
 
-enum {
-    SIMPLE_CHANNEL,
-    DUAL_CHANNEL
-};
 
 void dacStart(uint8_t pin, uint8_t bits, uint8_t channel);
 void dacStart(uint8_t pin);
