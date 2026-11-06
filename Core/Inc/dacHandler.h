@@ -22,15 +22,19 @@ enum {
     DHR8R,
     DHR12L,
     DHR12R,
-    DHR8RD,
-    DHR12LD,
-    DHR12RD
+};
 
+enum {
+    disabledWave,
+    noiseWave,
+    triangleWave
 };
 
 
 void dacStart(uint8_t pin, uint8_t bits, uint8_t channel);
-void dacStart(uint8_t pin);
+void dacStart2(uint8_t pin, uint8_t resolution, uint8_t waveform, uint8_t amplitude);
+void dacSetValue(uint8_t pin, uint8_t resolution, uint16_t value);
+void dacTrigger(uint8_t pin);
 
 
 #endif
