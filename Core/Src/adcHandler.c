@@ -47,9 +47,15 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pin[], uint8_t channelType, uint8_t res
     Delay_ms(1);    //aguarda o ADC iniciar
 
     if (sizeof(pin) > 1){
-        ADCx->SQR1 &= ~(sizeof(pin) << 20);
+        ADCx->SQR1 &= ~(0xF << 20);
         ADCx->SQR1 |= (sizeof(pin) << 20);
-        ADCx->SQR3 |=
+        ADCx->SQR3 &= ~0x1F;
+        //ADCx->SQR3 |=  configurar para multiplos canais;
+    }
+    else {
+        ADCx->SQR1 &= ~(0xF << 20);
+        ADCx->SQR3 &= ~(0x1F);
+        ADCx->SQR3 |= pin;
     }
 }
 
