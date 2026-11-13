@@ -1,6 +1,6 @@
 #include "timerHandler.h"
 
-void timerInit(void){
+void delayInit(void){
     RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 	TIM2->PSC = 83;
 	TIM2->EGR = TIM_EGR_UG;
@@ -9,13 +9,13 @@ void timerInit(void){
 }
 
 void delay(uint32_t ms){
-    if(!isInitiated) timerInit();
+    if(!isInitiated) delayInit();
     TIM2->CNT = 0;
 	while(TIM2->CNT < ms*1000);
 }
 
 void microDelay(uint32_t microSeconds){
-    if(!isInitiated) timerInit();
+    if(!isInitiated) delayInit();
     TIM2->CNT = 0;
 	while(TIM2->CNT < microSeconds);
 }
