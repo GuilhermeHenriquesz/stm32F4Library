@@ -13,6 +13,10 @@
 #include "stm32f4xx_hal.h"
 #include <stdlib.h>
 
+typedef void (*function)(void);
+
+static volatile function ISR[1];
+
 enum {
     SINGLE_CHANNEL,
     MULTI_CHANNEL
@@ -55,8 +59,16 @@ enum {
     PC5,
 };
 
+
+
 void dacStart();
 
 void dacStart2();
+
+void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t pins[], uint8_t sizePins);
+
+uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx);
+
+void ADC_IRQHandler(void);
 
 #endif
