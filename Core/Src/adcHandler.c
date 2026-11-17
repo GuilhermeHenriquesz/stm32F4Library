@@ -48,8 +48,14 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resol
 
     ADC->CCR |= (0b01 << 16); // Set the prescaler
 
-    ADCx->SQR1 &= ~(0xF << 20);
-    ADCx->SQR3 &= (sizePins - 1) << 20;
+
+    //ADCx->SQR1 &= ~(0xF << 20);
+    //ADCx->SQR3 &= (sizePins - 1) << 20;
+
+    if (pin[0] == 15){
+
+    }
+
 
     if(sizePins == 1)   //SINGLE_CHANNEL
     {
@@ -98,6 +104,34 @@ void initAdcInterrupt(ADC_Typedef* ADCx, function func) {
 
 void getAdcInterruptConversion(ADC_Typedef* ADCx) {
     ADCx->CR2 |= ADC_CR2_SWSTART;
+}
+
+float adcTemperatureSensor(void){
+    ADC->CCR |= 0b01 << 16;
+    ADC1->SQR1 &= ~(0xF << 20);
+    ADC1->SQR3 |= 16;
+    ADC1->SMPR1 |= (7 << 18);
+    ADC->CCR |= ADC_CCR_TSVREFE;
+    ADC1->CR2 |= ADC_CR2_ADON;
+
+    uint32_t *p = (uint32_t *) 0x1FFF7A2C;
+    uint32_t Word = *p;
+    uint16_t TS_CAL1 = (Word & 0x0000FFFF);
+    uint16_t TS_CAL2 = (Word & 0xFFFF0000);
+
+    ADC1->CR2 |= ADC_CR2_SWSTART;
+    while(!(ADC1->SR & ADC_SR_EOC));
+    return ((80 * (float) (ADC1->DR - TS_CAL1)) / (TS_CAL2 - TS_CAL1)) + 30;
+}
+
+void adcExternInterruptOn(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resolution){
+    adcStart(ADCx, pins, sizePins, resolution);
+    ADC1->CR2 |= 0b01 << 28;
+    ADC1->CR2 |= 0b1111 << 24;
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+    SYSCFG->EXTI[2] |= 0b0001 << 12;
+    EXTI->RTSR |= 1 << 11;
+    EXTI->EMR |= 1 << 1;
 }
 
 void ADC_IRQHandler(void){

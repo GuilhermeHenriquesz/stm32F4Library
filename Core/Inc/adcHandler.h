@@ -62,6 +62,8 @@ void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizeP
 
 uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx);
 
+float adcTemperatureSensor(void)
+
 void ADC_IRQHandler(void);
 
 #endif
