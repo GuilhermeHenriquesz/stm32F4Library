@@ -1,9 +1,10 @@
 
+#include "dacHandler.h"
 
-void dacStart(uint8_t pin, uint8_t resolution) {
+void dacStart(uint8_t pin) {
     if(!(RCC->AHB1ENR & RCC_AHB1ENR_GPIOAEN)) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // Activate port A clock
 
-    if(!(RCC->APB1ENR & RCC_APB1ENR_DACEN)) RCC->AHB1ENR |= RCC_APB1ENR_DACEN; // Activate DAC clock
+    if(!(RCC->APB1ENR & RCC_APB1ENR_DACEN)) RCC->APB1ENR |= RCC_APB1ENR_DACEN; // Activate DAC clock
 
     GPIOA->MODER &= ~(0b11 << (pin + 4) * 2);
     GPIOA->MODER |= 0b11 << (pin + 4) * 2; // Set ANALOG mode
@@ -15,7 +16,7 @@ void dacStart2(uint8_t pin, uint8_t resolution, uint8_t waveform, uint8_t amplit
 
     if(!(RCC->AHB1ENR & RCC_AHB1ENR_GPIOAEN)) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // Activate port A clock
 
-    if(!(RCC->APB1ENR & RCC_APB1ENR_DACEN)) RCC->AHB1ENR |= RCC_APB1ENR_DACEN; // Activate DAC clock
+    if(!(RCC->APB1ENR & RCC_APB1ENR_DACEN)) RCC->APB1ENR |= RCC_APB1ENR_DACEN; // Activate DAC clock
 
     GPIOA->MODER &= ~(0b11 << (pin + 4) * 2);
     GPIOA->MODER |= 0b11 << (pin + 4) * 2; // Set ANALOG mode
@@ -35,7 +36,7 @@ void dacStart2(uint8_t pin, uint8_t resolution, uint8_t waveform, uint8_t amplit
 }
 
 void dacSetValue(uint8_t pin, uint8_t resolution, uint16_t value){
-    if (pin){
+    if (!pin){
        switch(resolution) {
        case (0):
            DAC->DHR8R1 = value;

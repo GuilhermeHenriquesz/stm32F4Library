@@ -32,7 +32,7 @@ enum{
 	OUTPUT,
 	ALTERNATE,
 	ANALOG
-}
+};
 
 /**
  * @brief Write high state in a output pin

@@ -18,11 +18,6 @@ typedef void (*function)(void);
 static volatile function ISR[1];
 
 enum {
-    SINGLE_CHANNEL,
-    MULTI_CHANNEL
-};
-
-enum {
     RES12BITS,
     RES10BITS,
     RES8BITS,
@@ -41,25 +36,23 @@ enum {
 };
 
 enum {
-    PA0,
-    PA1,
-    PA2,
-    PA3,
-    PA4,
-    PA5,
-    PA6,
-    PA7,
-    PB0,
-    PB1,
-    PC0,
-    PC1,
-    PC2,
-    PC3,
-    PC4,
-    PC5,
+    ADC_PA0,
+    ADC_PA1,
+    ADC_PA2,
+    ADC_PA3,
+    ADC_PA4,
+    ADC_PA5,
+    ADC_PA6,
+    ADC_PA7,
+    ADC_PB0,
+    ADC_PB1,
+    ADC_PC0,
+    ADC_PC1,
+    ADC_PC2,
+    ADC_PC3,
+    ADC_PC4,
+    ADC_PC5
 };
-
-
 
 void dacStart();
 

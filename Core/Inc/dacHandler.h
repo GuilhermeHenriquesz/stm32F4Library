@@ -14,8 +14,8 @@
 #include <stdlib.h>
 
 enum{
-    PA4,
-    PA5
+    DAC_PA4,
+    DAC_PA5
 };
 
 enum {
@@ -31,7 +31,7 @@ enum {
 };
 
 
-void dacStart(uint8_t pin, uint8_t bits, uint8_t channel);
+void dacStart(uint8_t pin);
 void dacStart2(uint8_t pin, uint8_t resolution, uint8_t waveform, uint8_t amplitude);
 void dacSetValue(uint8_t pin, uint8_t resolution, uint16_t value);
 void dacTrigger(uint8_t pin);

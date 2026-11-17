@@ -1,11 +1,11 @@
 #include "adcHandler.h"
 
-void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t channelType, uint8_t resolution){
+void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resolution){
     for (uint8_t i = 0; i < sizePins; i++){
         if (pins[i] < 8){
             if(!(RCC->AHB1ENR & RCC_AHB1ENR_GPIOAEN)) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // Activate port A clock
             GPIOA->MODER &= ~(0b11 << pins[i] * 2);
-            GPIOA->MODER |= 0b11 << pin[i] * 2; // Set ANALOG mode
+            GPIOA->MODER |= 0b11 << pins[i] * 2; // Set ANALOG mode
         }
 
         else if (pins[i] == 8 || pins[i] == 9){
@@ -32,13 +32,13 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t chann
         {
             deslocamento = (i - 6) * 5;
             ADCx->SQR2 &= ~(0x1F << deslocamento);          //limpa os bits do campo do canal
-            ADCx->SQR2 |= (channels[i] << deslocamento);    //configura o canal na posição
+            ADCx->SQR2 |= (pins[i] << deslocamento);    //configura o canal na posição
         }
         else
         {
             deslocamento = (i - 12) * 5;
             ADCx->SQR1 &= ~(0x1F << deslocamento);          //limpa os bits do campo do canal
-            ADCx->SQR1 |= (channels[i] << deslocamento);    //configura o canal na posição
+            ADCx->SQR1 |= (pins[i] << deslocamento);    //configura o canal na posição
         }
     }
 
@@ -51,7 +51,7 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t chann
     ADCx->SQR1 &= ~(0xF << 20);
     ADCx->SQR3 &= (sizePins - 1) << 20;
 
-    if(!channelType)   //SINGLE_CHANNEL
+    if(sizePins == 1)   //SINGLE_CHANNEL
     {
         ADCx->CR1 &= ~ADC_CR1_SCAN; //desabilita o escaneamento de canais
         ADC1->CR2 &= ~ADC_CR2_EOCS;
@@ -71,7 +71,7 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t chann
     Delay_ms(1);    //aguarda o ADC iniciar
 }
 
-void adcStart2(uint8_t pin, uint8_t channel, uint8_t channelType, uint8_t resolution, uint8_t sampleTime){
+void adcStart2(uint8_t pin, uint8_t channel, uint8_t resolution, uint8_t sampleTime){
 
 }
 
@@ -81,15 +81,15 @@ uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx){
     return ADCx->DR;
 }
 
-void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t pins[], uint8_t sizePins){
+void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizePins){
     ADCx->CR2 |= ADC_CR2_SWSTART;
     for (uint8_t i = 0; i < sizePins; i++){
         while(!(ADCx->SR & ADC_SR_EOC));
-        pins[i] = ADCx->DR;
+        readPins[i] = ADCx->DR;
     }
 }
 
-void initAdcInterrupt(ADC_Typedef* ADCx, uint16_t pins[], uint8_t sizePins, function func) {
+void initAdcInterrupt(ADC_Typedef* ADCx, function func) {
     ADC1->CR2 |= ~ADC_CR2_EOCS;  //bit EOC setado ao final de cada sequencia de conversao
     ADCx->CR1 |= ADC_CR1_EOCIE;
     NVIC_EnableIRQ(ADC_IRQn);
@@ -101,6 +101,6 @@ void getAdcInterruptConversion(ADC_Typedef* ADCx) {
 }
 
 void ADC_IRQHandler(void){
-    if(ISRs[0] == NULL) return;
-        ISRs[0]();
+    if(ISR[0] == NULL) return;
+        ISR[0]();
 }
