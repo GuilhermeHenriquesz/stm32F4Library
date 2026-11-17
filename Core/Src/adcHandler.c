@@ -124,14 +124,17 @@ float adcTemperatureSensor(void){
     return ((80 * (float) (ADC1->DR - TS_CAL1)) / (TS_CAL2 - TS_CAL1)) + 30;
 }
 
-void adcExternInterruptOn(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resolution){
+int adcExternInterruptOn(ADC_TypeDef* ADCx){
+
     adcStart(ADCx, pins, sizePins, resolution);
-    ADC1->CR2 |= 0b01 << 28;
-    ADC1->CR2 |= 0b1111 << 24;
+    ADCx->CR2 |= 0b01 << 28;
+    ADCx->CR2 |= 0b1111 << 24;
     RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
-    SYSCFG->EXTI[2] |= 0b0001 << 12;
+    SYSCFG->EXTI[2] |= 0b0001 << 12; //PIN = PB11
     EXTI->RTSR |= 1 << 11;
     EXTI->EMR |= 1 << 1;
+
+    if (ADC1->SR & ADC_SR_EOC) return ADCx->DR;
 }
 
 void ADC_IRQHandler(void){
