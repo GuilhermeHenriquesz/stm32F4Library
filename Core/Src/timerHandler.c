@@ -19,3 +19,15 @@ void microDelay(uint32_t microSeconds){
     TIM2->CNT = 0;
 	while(TIM2->CNT < microSeconds);
 }
+
+void sysTick(uint32_t reloadValue, function func) {
+    SysTick->LOAD = reloadValue - 1;
+    SysTicl->CTRL = 0b011;
+    ISR[0] = func;
+
+}
+
+void SysTick_Handler(){
+    if(ISR[0] == NULL) return;
+        ISR[0]();
+}

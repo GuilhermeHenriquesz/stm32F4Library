@@ -10,6 +10,10 @@
 #include "gpioHandler.h"
 
 static uint8_t isInitiated = 0;
+
+typedef void (*function)(void);
+static volatile function ISRs[1];
+
 /**
  * @brief Initiate the timer delay configs(Timer used is timer 2)
  */
@@ -28,5 +32,9 @@ void delay(uint32_t ms);
  * @param microSeconds microseconds to be delayed
  */
 void microDelay(uint32_t microSeconds);
+
+void sysTick(uint32_t reloadValue); // Clock 168Mhz
+
+void SysTick_Handler();
 
 #endif
