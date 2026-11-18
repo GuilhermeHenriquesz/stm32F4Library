@@ -14,5 +14,7 @@
 #include "timerHandler.h"
 #include "ultrasonicSensorHandler.h"
 #include "sevenSegmentsHandler.h"
+#include "adcHandler.h"
+#include "dacHandler.h"
 
 #endif
