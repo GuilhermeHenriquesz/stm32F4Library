@@ -58,11 +58,21 @@ void dacStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resol
 
 void dacStart2(uint8_t pin, uint8_t channel, uint8_t resolution, uint8_t sampleTime);
 
-void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizePins);
-
 uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx);
 
-float adcTemperatureSensor(void)
+void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizePins);
+
+void initAdcInterrupt(ADC_Typedef* ADCx, function func);
+
+void getAdcInterruptConversion(ADC_Typedef* ADCx);
+
+float adcTemperatureSensor(void);
+
+int adcExternInterruptOn(ADC_TypeDef* ADCx);
+
+void watchdogAdc(ADC_TypeDef* ADCx, uint8_t pin, uint32_t highLimit, uint32_t lowLimit);
+
+void getWatchdog(ADC_TypeDef* ADCx, function func);
 
 void ADC_IRQHandler(void);
 

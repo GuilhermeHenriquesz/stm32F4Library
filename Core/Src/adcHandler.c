@@ -137,7 +137,26 @@ int adcExternInterruptOn(ADC_TypeDef* ADCx){
     if (ADC1->SR & ADC_SR_EOC) return ADCx->DR;
 }
 
+void watchdogAdc(ADC_TypeDef* ADCx, uint8_t pin, uint32_t highLimit, uint32_t lowLimit){
+    ADCx->LTR = lowLimit;
+    ADCx->HTR = highLimit;
+    ADCx->CR1 |= ADC_CR1_AWDSGL;
+    ADCx->CR1 &= ~ADC_CR1_AWDCH;
+    ADCx->CR1 |= pin;
+    ADCx->CR1 |= ADC_CR1_AWDEN;
+
+    ADCx->CR1 |= ADC_CR1_AWDIE;
+    NVIC_EnableIRQ(ADC_IRQn);
+
+}
+
+void getWatchdog(ADC_TypeDef* ADCx, function func){
+    ADCx->CR2 |= ADC_CR2_SWSTART;
+    ISR[0] = func;
+}
+
 void ADC_IRQHandler(void){
     if(ISR[0] == NULL) return;
         ISR[0]();
+    ADCx->SR &= ~ADC_SR_AWD; // Reset the interruption flag;
 }
