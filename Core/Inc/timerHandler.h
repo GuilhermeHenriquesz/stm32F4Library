@@ -11,9 +11,9 @@
 
 static uint8_t isInitiated = 0;
 /**
- * @brief Initiate the timer configs
+ * @brief Initiate the timer delay configs(Timer used is timer 2)
  */
-void timerInit(void);
+void delayInit(void);
 
 /**
  * @brief Miliseconds delay
