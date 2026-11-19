@@ -25,9 +25,24 @@ enum {
 };
 
 enum {
-    disabledWave,
-    noiseWave,
-    triangleWave
+    DISABLEDWAVE,
+    NOISEWAVE,
+    TRIANGLEWAVE
+};
+
+enum {
+    AMP_1BIT,
+	AMP_2BITS,
+	AMP_3BITS,
+	AMP_4BITS,
+	AMP_5BITS,
+	AMP_6BITS,
+	AMP_7BITS,
+	AMP_8BITS,
+	AMP_9BITS,
+	AMP_10BITS,
+	AMP_11BITS,
+	AMP_12BITS
 };
 
 
