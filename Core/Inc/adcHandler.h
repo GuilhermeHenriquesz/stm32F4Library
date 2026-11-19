@@ -11,6 +11,7 @@
 #define ADC_HANDLER_H
 
 #include "stm32f4xx_hal.h"
+#include "timerHandler.h"
 #include <stdlib.h>
 
 typedef void (*function)(void);
