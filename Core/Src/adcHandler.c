@@ -74,7 +74,7 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resol
     ADCx->SMPR2 |= 0b111; // Select the sample time
 
     ADCx->CR2 |= ADC_CR2_ADON;
-    Delay_ms(1);    //aguarda o ADC iniciar
+    delay(1);    //aguarda o ADC iniciar
 }
 
 void adcStart2(uint8_t pin, uint8_t channel, uint8_t resolution, uint8_t sampleTime){
