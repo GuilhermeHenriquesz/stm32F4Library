@@ -8,13 +8,14 @@
 #define TIMER_HANDLER_H
 
 #include "gpioHandler.h"
+#include "stm32f4xx.h"
 
 static uint8_t isInitiated = 0;
 
 typedef struct{
-    __IO uint32_t* controlRegister,
-    __IO uint32_t* captureCompareMode,
-    __IO uint32_t* captureCompare
+    __IO uint32_t* controlRegister;
+    __IO uint32_t* captureCompareMode;
+    __IO uint32_t* captureCompare;
 } TimerChannel;
 
 typedef void (*function)(void);
