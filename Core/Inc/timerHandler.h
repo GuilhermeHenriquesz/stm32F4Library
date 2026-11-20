@@ -7,8 +7,6 @@
 #ifndef TIMER_HANDLER_H
 #define TIMER_HANDLER_H
 
-#define TIM1
-
 #include "gpioHandler.h"
 
 static uint8_t isInitiated = 0;
