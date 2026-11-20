@@ -42,7 +42,7 @@ void timerStart(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t 
 }
 
 void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm, function func){
-    if (TIM2 <= TIMx && TIMx <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)TIMx - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE))); // ATENCAO TESTAR SE FUNCIONA A ABILITACAO DO CLOCK
+    if (TIM2 <= TIMx && TIMx <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)TIMx - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE))); // ATENCAO TESTAR SE FUNCIONA A HABILITACAO DO CLOCK
     TIMx->PSC = prescaler - 1;
     TIMx->EGR |= TIM_EGR_UG;
     TIMx->ARR |= reload - 1;
