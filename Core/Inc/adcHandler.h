@@ -55,8 +55,8 @@ enum {
     PC5,
 };
 
-void dacStart();
+void adcStart();
 
-void dacStart2();
+void adcStart2();
 
 #endif

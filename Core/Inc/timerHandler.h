@@ -7,12 +7,20 @@
 #ifndef TIMER_HANDLER_H
 #define TIMER_HANDLER_H
 
+#define TIM1
+
 #include "gpioHandler.h"
 
 static uint8_t isInitiated = 0;
 
 typedef void (*function)(void);
-static volatile function ISRs[1];
+static volatile function ISRs[5];
+
+enum {
+    UPCOUNTER,
+    DOWNCOUNTER,
+    UPDOWNCOUNTER
+};
 
 /**
  * @brief Initiate the timer delay configs(Timer used is timer 2)
@@ -36,5 +44,7 @@ void microDelay(uint32_t microSeconds);
 void sysTick(uint32_t reloadValue); // Clock 168Mhz
 
 void SysTick_Handler();
+
+void timer(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm);
 
 #endif
