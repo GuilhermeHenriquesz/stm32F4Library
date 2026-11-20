@@ -75,6 +75,25 @@ void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, u
     TIMx->CR1 |= TIM_CR1_CEN;
 }
 
+void timerPWM(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm) {
+    if (TIM2 <= TIMx && TIMx <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)TIMx - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE)));
+    TIMx->PSC = prescaler - 1;
+
+    TIMx->ARR |= reload - 1;
+    TIMx->CR1 &= ~(0b11 << 5);
+    TIMx->CR1 &= ~(0b11 << 4);
+
+    TIMx->CCMR2 |= 0b110 << 4; //PWM MODO 1
+    TIMx->CCMR2 |= TIM_CCMR2_OC3PE;
+    TIMx->CCER |= TIM_CCER_CC3E;
+    TIMx->EGR |= TIM_EGR_UG;
+
+    if (countForm == 2) TIMx->CR1 |= 0b01 << 5;
+    else TIMx->CR1 |= countForm << 4;
+
+    TIMx->CR1 |= TIM_CR1_CEN;
+}
+
 uint32_t getTimer(TIM_TypeDef* TIMx){
     return TIMx->CNT;
 }
