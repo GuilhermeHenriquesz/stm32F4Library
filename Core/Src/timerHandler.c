@@ -75,6 +75,38 @@ void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, u
     TIMx->CR1 |= TIM_CR1_CEN;
 }
 
+void timerChannelStart(TimerChannel* toStart, TIM_TypeDef* timer, uint8_t channel){
+    toStart->controlRegister = &(timer->CCER);
+    toStart->captureCompareMode = channel <= 2? &(timer->CCMR1) : &(timer->CCMR2);
+    *(toStart->captureCompareMode) |= 0b110 << 4; //Enable mode 1 PWM
+    switch(channel){
+        case 1 :
+            toStart->captureCompare = &(timer->CCR1);
+            *(toStart->captureCompareMode) |= TIM_CCMR1_OC1PE;
+            *(toStart->controlRegister) |= TIM_CCER_CC1E;
+            break;
+        case 2 :
+            toStart->captureCompare = &(timer->CCR2);
+            *(toStart->captureCompareMode) |= TIM_CCMR1_OC2PE;
+            *(toStart->controlRegister) |= TIM_CCER_CC2E;
+            break;
+        case 3 :
+            toStart->captureCompare = &(timer->CCR3);
+            *(toStart->captureCompareMode) |= TIM_CCMR2_OC3PE;
+            *(toStart->controlRegister) |= TIM_CCER_CC3E;
+            break;
+        case 4 :
+            toStart->captureCompare = &(timer->CCR4);
+            *(toStart->captureCompareMode) |= TIM_CCMR2_OC4PE;
+            *(toStart->controlRegister) |= TIM_CCER_CC4E;
+    }
+}
+
+void setDuty(TimerChannel* channel, uint32_t duty){
+    *(channel->captureCompare) = duty;
+}
+
+/*
 void timerPWM(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm) {
     if (TIM2 <= TIMx && TIMx <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)TIMx - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE)));
     TIMx->PSC = prescaler - 1;
@@ -93,6 +125,7 @@ void timerPWM(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t co
 
     TIMx->CR1 |= TIM_CR1_CEN;
 }
+*/
 
 uint32_t getTimer(TIM_TypeDef* TIMx){
     return TIMx->CNT;

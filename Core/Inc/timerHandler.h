@@ -13,6 +13,12 @@
 
 static uint8_t isInitiated = 0;
 
+typedef struct{
+    __IO uint32_t* controlRegister,
+    __IO uint32_t* captureCompareMode,
+    __IO uint32_t* captureCompare
+} TimerChannel;
+
 typedef void (*function)(void);
 static volatile function ISRs[5];
 
@@ -69,7 +75,24 @@ void timerStart(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t 
  */
 void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm, function func);
 
-void timerPWM(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm);
+//void timerPWM(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm);
+
+/**
+ * @brief Start up the timer channel
+ * 
+ * @param toStart Struct TimerChannel that represents the channel
+ * @param timer Struct TIMER to get the timerChannel attributes
+ * @param channel Value between 1 and 4 that represents the channel
+ */
+void timerChannelStart(TimerChannel* toStart, TIM_TypeDef* timer, uint8_t channel);
+
+/**
+ * @brief Set the DutyCycle of a PWM channel
+ * 
+ * @param channel Struct TimerChannel to update the duty value
+ * @param duty The value to be passed to be the duty cycle
+ */
+void setDuty(TimerChannel* channel, uint32_t duty);
 
 /**
  * @brief Get the Timer time
