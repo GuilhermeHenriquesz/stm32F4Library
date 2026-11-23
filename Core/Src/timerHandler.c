@@ -30,8 +30,9 @@ void sysTick(uint32_t reloadValue, function func) {
 void timerStart(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm) {
     if (TIM2 <= TIMx && TIMx <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)TIMx - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE)));
     TIMx->PSC = prescaler - 1;
+    TIMx->ARR = reload - 1;
     TIMx->EGR |= TIM_EGR_UG;
-    TIMx->ARR |= reload - 1;
+
     TIMx->CR1 &= ~(0b11 << 5);
     TIMx->CR1 &= ~(0b11 << 4);
     if (countForm == 2) TIMx->CR1 |= 0b01 << 5;
