@@ -64,3 +64,9 @@ uint8_t readPin(Pin* pin) {
 		return 1;
 	else return 0;
 }
+
+void alternativeFunction(Pin* pin, uint8_t function) //ATENCAO TESTAR SE FUNCIONA
+{
+    pin->port->AFR[pin->index/8] &= ~(0b1111 << ((pin->index % 8) * 4));  //reseta os 4 bits da função alternativa
+    pin->port->AFR[pin->index/8] |= (function << ((pin->index % 8) * 4)); //configura a função selecionada
+}

@@ -34,6 +34,26 @@ enum{
 	ANALOG
 };
 
+enum{
+    ALTFUNC0,
+    ALTFUNC1,
+    ALTFUNC2,
+    ALTFUNC3,
+    ALTFUNC4,
+    ALTFUNC5,
+    ALTFUNC6,
+    ALTFUNC7,
+    ALTFUNC8,
+    ALTFUNC9,
+    ALTFUNC10,
+    ALTFUNC11,
+    ALTFUNC12,
+    ALTFUNC13,
+    ALTFUNC14,
+    ALTFUNC15
+};
+
+
 /**
  * @brief Write high state in a output pin
  *
@@ -111,5 +131,7 @@ void setPullUp(Pin* pin);
  * @return A uint_8 that indicates if the pin is high(1) or low(0)
  */
 uint8_t readPin(Pin* pin);
+
+void alternativeFunction(Pin* pin, uint8_t function);
 
 #endif
