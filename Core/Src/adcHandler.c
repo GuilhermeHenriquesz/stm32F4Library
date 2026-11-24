@@ -75,6 +75,18 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resol
 
     ADCx->CR2 |= ADC_CR2_ADON;
     delay(1);    //aguarda o ADC iniciar
+
+    if (sizeof(pin) > 1){
+        ADCx->SQR1 &= ~(0xF << 20);
+        ADCx->SQR1 |= (sizeof(pin) << 20);
+        ADCx->SQR3 &= ~0x1F;
+        //ADCx->SQR3 |=  configurar para multiplos canais;
+    }
+    else {
+        ADCx->SQR1 &= ~(0xF << 20);
+        ADCx->SQR3 &= ~(0x1F);
+        ADCx->SQR3 |= pin[0];
+    }
 }
 
 void adcStart2(uint8_t pin, uint8_t channel, uint8_t resolution, uint8_t sampleTime){

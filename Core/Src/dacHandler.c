@@ -1,4 +1,3 @@
-
 #include "dacHandler.h"
 
 void dacStart(uint8_t pin) {
