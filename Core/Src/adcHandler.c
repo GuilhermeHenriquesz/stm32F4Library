@@ -44,7 +44,7 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pin[], uint8_t channelType, uint8_t res
     ADCx->SMPR2 |= 0b111; // Select the sample time
 
     ADCx->CR2 |= ADC_CR2_ADON;
-    Delay_ms(1);    //aguarda o ADC iniciar
+    delay(1);    //aguarda o ADC iniciar
 
     if (sizeof(pin) > 1){
         ADCx->SQR1 &= ~(0xF << 20);
@@ -55,7 +55,7 @@ void adcStart(ADC_TypeDef* ADCx, uint8_t pin[], uint8_t channelType, uint8_t res
     else {
         ADCx->SQR1 &= ~(0xF << 20);
         ADCx->SQR3 &= ~(0x1F);
-        ADCx->SQR3 |= pin;
+        ADCx->SQR3 |= pin[0];
     }
 }
 

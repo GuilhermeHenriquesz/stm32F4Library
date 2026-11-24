@@ -23,23 +23,23 @@ void microDelay(uint32_t microSeconds){
 void sysTick(uint32_t reloadValue, function func) {
     SysTick->LOAD = reloadValue - 1;
     SysTick->CTRL = 0b011;
-    ISRs[0] = func;
+    ISRsADC[0] = func;
 
 }
 
-void timerStart(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm) {
-    if (TIM2 <= TIMx && TIMx <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)TIMx - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE)));
-    TIMx->PSC = prescaler - 1;
-    TIMx->ARR = reload - 1;
-    TIMx->EGR |= TIM_EGR_UG;
+void timerStart(TIM_TypeDef* timer, uint16_t prescaler, uint32_t reload, uint8_t countForm) {
+    if (TIM2 <= timer && timer <= TIM5) RCC->APB1ENR |= (1 << ((uint32_t)timer - (TIM2_BASE)) / ((TIM3_BASE) - (TIM2_BASE)));
+    timer->CR1 = 0;
+    timer->PSC = prescaler - 1;
+    timer->EGR |= TIM_EGR_UG;
+    timer->ARR = reload - 1;
+    timer->CR1 &= ~(0b11 << 5);
+    timer->CR1 &= ~(0b11 << 4);
+    if (countForm == 2) timer->CR1 |= 0b01 << 5;
+    else timer->CR1 |= countForm << 4;
 
-    TIMx->CR1 &= ~(0b11 << 5);
-    TIMx->CR1 &= ~(0b11 << 4);
-    if (countForm == 2) TIMx->CR1 |= 0b01 << 5;
-    else TIMx->CR1 |= countForm << 4;
 
-
-    TIMx->CR1 |= TIM_CR1_CEN;
+    timer->CR1 |= TIM_CR1_CEN;
 }
 
 void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, uint8_t countForm, function func){
@@ -54,23 +54,18 @@ void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, u
 
     TIMx->DIER |= TIM_DIER_UIE;
 
-    switch (TIMx){
-        case (TIM2):
-            NVIC_EnableIRQ(TIM2_IRQn);
-            ISRs[1] = func;
-            break;
-        case (TIM3):
-            NVIC_EnableIRQ(TIM3_IRQn);
-            ISRs[2] = func;
-            break;
-        case (TIM4):
-            NVIC_EnableIRQ(TIM4_IRQn);
-            ISRs[3] = func;
-            break;
-        case (TIM5):
-            NVIC_EnableIRQ(TIM5_IRQn);
-            ISRs[4] = func;
-            break;
+    if(TIMx == TIM2){
+    	NVIC_EnableIRQ(TIM2_IRQn);
+		ISRsADC[1] = func;
+    }else if(TIMx == TIM3){
+    	NVIC_EnableIRQ(TIM3_IRQn);
+		ISRsADC[2] = func;
+    }else if(TIMx == TIM4){
+    	NVIC_EnableIRQ(TIM4_IRQn);
+		ISRsADC[3] = func;
+    }else if(TIMx == TIM5){
+    	NVIC_EnableIRQ(TIM5_IRQn);
+		ISRsADC[4] = func;
     }
 
     TIMx->CR1 |= TIM_CR1_CEN;
@@ -79,7 +74,9 @@ void timerInterruption(TIM_TypeDef* TIMx, uint16_t prescaler, uint32_t reload, u
 void timerChannelStart(TimerChannel* toStart, TIM_TypeDef* timer, uint8_t channel){
     toStart->controlRegister = &(timer->CCER);
     toStart->captureCompareMode = channel <= 2? &(timer->CCMR1) : &(timer->CCMR2);
-    *(toStart->captureCompareMode) |= 0b110 << 4; //Enable mode 1 PWM
+    uint8_t shift = (channel % 2 == 1) ? 4 : 12;
+    *(toStart->captureCompareMode) &= ~(0b111U << shift);
+    *(toStart->captureCompareMode) |=  (0b110U << shift);
     switch(channel){
         case 1 :
             toStart->captureCompare = &(timer->CCR1);
@@ -137,26 +134,26 @@ void resetTimer(TIM_TypeDef* TIMx){
 }
 
 void SysTick_Handler(){
-    if(ISRs[0] == NULL) return;
-        ISRs[0]();
+    if(ISRsADC[0] == NULL) return;
+        ISRsADC[0]();
 }
 
 void TIM2_IRQHandler(){
     TIM2->SR &= ~TIM_SR_UIF;
-    ISRs[1]();
+    ISRsADC[1]();
 }
 
 void TIM3_IRQHandler(){
     TIM3->SR &= ~TIM_SR_UIF;
-    ISRs[2]();
+    ISRsADC[2]();
 }
 
 void TIM4_IRQHandler(){
     TIM4->SR &= ~TIM_SR_UIF;
-    ISRs[3]();
+    ISRsADC[3]();
 }
 
 void TIM5_IRQHandler(){
     TIM5->SR &= ~TIM_SR_UIF;
-    ISRs[4]();
+    ISRsADC[4]();
 }

@@ -1,4 +1,4 @@
-
+#include "dacHandler.h"
 
 void dacStart(uint8_t pin, uint8_t resolution) {
     if(!(RCC->AHB1ENR & RCC_AHB1ENR_GPIOAEN)) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN; // Activate port A clock
