@@ -14,8 +14,8 @@
 #include <stdlib.h>
 
 enum{
-    PA4,
-    PA5
+    DAC_PA4,
+    DAC_PA5
 };
 
 enum {
@@ -25,9 +25,24 @@ enum {
 };
 
 enum {
-    disabledWave,
-    noiseWave,
-    triangleWave
+    DISABLEDWAVE,
+    NOISEWAVE,
+    TRIANGLEWAVE
+};
+
+enum {
+    AMP1BIT,
+    AMP2BITS,
+    AMP3BITS,
+    AMP4BITS,
+    AMP5BITS,
+    AMP6BITS,
+    AMP7BITS,
+    AMP8BITS,
+    AMP9BITS,
+    AMP10BITS,
+    AMP11BITS,
+    AMP12BITS
 };
 
 
