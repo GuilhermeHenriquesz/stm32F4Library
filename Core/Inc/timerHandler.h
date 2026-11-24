@@ -7,19 +7,20 @@
 #ifndef TIMER_HANDLER_H
 #define TIMER_HANDLER_H
 
+#define TIM1
+
 #include "gpioHandler.h"
-#include "stm32f4xx.h"
 
 static uint8_t isInitiated = 0;
 
 typedef struct{
-    __IO uint32_t* controlRegister;
-    __IO uint32_t* captureCompareMode;
-    __IO uint32_t* captureCompare;
-} TimerChannel;
+    volatile uint32_t* controlRegister;
+    volatile uint32_t* captureCompareMode;
+    volatile uint32_t* captureCompare;
+}TimerChannel;
 
 typedef void (*function)(void);
-static volatile function ISRs[5];
+static volatile function ISRsADC[5];
 
 enum {
     UPCOUNTER,
@@ -51,7 +52,7 @@ void microDelay(uint32_t microSeconds);
  *
  * @param reloadValue Value to reload in the time to be counting down
  */
-void sysTick(uint32_t reloadValue); // Clock 168Mhz
+void sysTick(uint32_t reloadValue, function func); // Clock 168Mhz
 
 /**
  * @brief Timer Configuration

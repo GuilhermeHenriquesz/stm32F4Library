@@ -11,6 +11,7 @@
 #define ADC_HANDLER_H
 
 #include "stm32f4xx_hal.h"
+#include "timerHandler.h"
 #include <stdlib.h>
 
 enum {
@@ -55,8 +56,8 @@ enum {
     PC5,
 };
 
-void adcStart();
+void adcStart(ADC_TypeDef* ADCx, uint8_t pin[], uint8_t channelType, uint8_t resolution);
 
-void adcStart2();
+void adcStart2(uint8_t pin, uint8_t channel, uint8_t channelType, uint8_t resolution, uint8_t sampleTime);
 
 #endif
