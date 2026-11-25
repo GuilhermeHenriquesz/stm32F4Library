@@ -48,12 +48,24 @@ void adcMultiStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t 
     ADC->CCR |= (0b01 << 16); // Set the prescaler
 
     ADCx->CR1 |= ADC_CR1_SCAN;  //habilita o escaneamento de canais
-    ADC1->CR2 |= ADC_CR2_EOCS;  //bit EOC setado ao final de cada conversão
+    ADCx->CR2 |= ADC_CR2_EOCS;  //bit EOC setado ao final de cada conversão
 
     ADCx->CR1 &= ~ADC_CR1_RES;      //limpa o campo da resolução
     ADCx->CR1 |= resolution << 24;
 
-    ADCx->SMPR2 |= 0b111; // Select the sample time
+    for (uint8_t i = 0; i < sizePins; i++) // Select the sample time
+    {
+        if (pins[i] <= 9)
+        {
+            ADCx->SMPR2 &= ~(0b111 << (pins[i] * 3));
+            ADCx->SMPR2 |=  (0b111 << (pins[i] * 3));
+        }
+        else
+        {
+            ADCx->SMPR1 &= ~(0b111 << ((pins[i] - 10) * 3));
+            ADCx->SMPR1 |=  (0b111 << ((pins[i] - 10) * 3));
+        }
+    }
 
     ADCx->SQR1 &= ~(0xF << 20);				//limpa o campo de bits
     ADCx->SQR1 |= (numChannels - 1) << 20;	//escreve a quantidade de canais a ser convertido
