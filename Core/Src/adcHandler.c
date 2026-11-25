@@ -68,7 +68,7 @@ void adcMultiStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t 
     }
 
     ADCx->SQR1 &= ~(0xF << 20);				//limpa o campo de bits
-    ADCx->SQR1 |= (numChannels - 1) << 20;	//escreve a quantidade de canais a ser convertido
+    ADCx->SQR1 |= (sizePins - 1) << 20;	//escreve a quantidade de canais a ser convertido
 
     ADCx->CR2 |= ADC_CR2_ADON;
     delay(1);    //aguarda o ADC iniciar
