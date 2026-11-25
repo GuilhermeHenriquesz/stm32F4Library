@@ -11,13 +11,13 @@ void adcMultiStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t 
 
         else if (pins[i] == 8 || pins[i] == 9){
             if(!(RCC->AHB1ENR & RCC_AHB1ENR_GPIOBEN)) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN; // Activate port B clock
-            GPIOA->MODER &= ~(0b11 << (pins[i] - 8) * 2);
-            GPIOA->MODER |= 0b11 << (pins[i] - 8) * 2; // Set ANALOG mode
+            GPIOB->MODER &= ~(0b11 << (pins[i] - 8) * 2);
+            GPIOB->MODER |= 0b11 << (pins[i] - 8) * 2; // Set ANALOG mode
         }
         else {
             if(!(RCC->AHB1ENR & RCC_AHB1ENR_GPIOCEN)) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN; // Activate port C clock
-            GPIOA->MODER &= ~(0b11 << (pins[i] - 10) * 2);
-            GPIOA->MODER |= 0b11 << (pins[i] - 10) * 2; // Set ANALOG mode
+            GPIOC->MODER &= ~(0b11 << (pins[i] - 10) * 2);
+            GPIOC->MODER |= 0b11 << (pins[i] - 10) * 2; // Set ANALOG mode
         }
     }
     if(!(RCC->APB2ENR & (1 << ((uint32_t)ADCx - (ADC1_BASE)) / ((ADC2_BASE) - (ADC1_BASE))) << 8))
