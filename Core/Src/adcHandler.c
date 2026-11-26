@@ -166,15 +166,17 @@ void getAdcInterruptConversion(ADC_Typedef* ADCx) {
 }
 
 void adcTemperatureSensor(void){
-    if(!(RCC->APB2ENR & (1 << ((uint32_t)ADCx - (ADC1_BASE)) / ((ADC2_BASE) - (ADC1_BASE))) << 8))
-        RCC->APB2ENR |= (1 << ((uint32_t)ADCx - (ADC1_BASE)) / ((ADC2_BASE) - (ADC1_BASE))) << 8; // Activate ADC Clock
+    if(!(RCC->APB2ENR & RCC_APB2ENR_ADC1EN))
+        RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;; // Activate ADC Clock
 
     ADC->CCR |= 0b01 << 16;
     ADC1->SQR1 &= ~(0xF << 20);
+    ADC1->SQR3 &= ~(0x1F);
     ADC1->SQR3 |= 16;
     ADC1->SMPR1 |= (7 << 18);
     ADC->CCR |= ADC_CCR_TSVREFE;
     ADC1->CR2 |= ADC_CR2_ADON;
+    delay(1);
 
 }
 
@@ -182,11 +184,12 @@ float getTemperature(void) {
     uint32_t *p = (uint32_t *) 0x1FFF7A2C;
     uint32_t Word = *p;
     uint16_t TS_CAL1 = (Word & 0x0000FFFF);
-    uint16_t TS_CAL2 = (Word & 0xFFFF0000);
+    uint16_t TS_CAL2 = (Word & 0xFFFF0000) >> 16;
 
     ADC1->CR2 |= ADC_CR2_SWSTART;
     while(!(ADC1->SR & ADC_SR_EOC));
-    return ((80 * (float) (ADC1->DR - TS_CAL1)) / (TS_CAL2 - TS_CAL1)) + 30;
+    uint32_t adcValue = ADC1->DR;
+    return ((80.0f * (float) (adcValue - TS_CAL1)) / (TS_CAL2 - TS_CAL1)) + 30.0f;
 }
 
 int adcExternInterruptOn(ADC_TypeDef* ADCx){
