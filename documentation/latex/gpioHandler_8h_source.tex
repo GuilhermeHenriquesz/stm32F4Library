@@ -1,5 +1,6 @@
 \doxysection{gpio\+Handler.\+h}
-\hypertarget{gpioHandler_8h_source}{}\label{gpioHandler_8h_source}\doxymbox{\hyperlink{gpioHandler_8h}{Go to the documentation of this file.}}
+\hypertarget{gpioHandler_8h_source}{}\label{gpioHandler_8h_source}\index{Core/Inc/gpioHandler.h@{Core/Inc/gpioHandler.h}}
+\doxymbox{\hyperlink{gpioHandler_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00009\ }
@@ -20,30 +21,50 @@
 \DoxyCodeLine{00032\ \ \ \ \ OUTPUT,}
 \DoxyCodeLine{00033\ \ \ \ \ ALTERNATE,}
 \DoxyCodeLine{00034\ \ \ \ \ ANALOG}
-\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00035\ \};}
 \DoxyCodeLine{00036\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ delay(uint32\_t\ ms);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ microDelay(uint32\_t\ microSecond);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ writeHigh(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ writeLow(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ togglePin(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00078\ uint8\_t\ getPinStatus(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ virtualPwmWrite(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ value);}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ pinStart(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}\ *\doxymbox{\hyperlink{structpin}{pin}},\ GPIO\_TypeDef*\ port,\ uint8\_t\ index,\ uint8\_t\ mode);}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ setPullDown(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ setPullUp(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00119\ uint8\_t\ readPin(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00042\ \ \ \ \ ALTFUNC0,}
+\DoxyCodeLine{00043\ \ \ \ \ ALTFUNC1,}
+\DoxyCodeLine{00044\ \ \ \ \ ALTFUNC2,}
+\DoxyCodeLine{00045\ \ \ \ \ ALTFUNC3,}
+\DoxyCodeLine{00046\ \ \ \ \ ALTFUNC4,}
+\DoxyCodeLine{00047\ \ \ \ \ ALTFUNC5,}
+\DoxyCodeLine{00048\ \ \ \ \ ALTFUNC6,}
+\DoxyCodeLine{00049\ \ \ \ \ ALTFUNC7,}
+\DoxyCodeLine{00050\ \ \ \ \ ALTFUNC8,}
+\DoxyCodeLine{00051\ \ \ \ \ ALTFUNC9,}
+\DoxyCodeLine{00052\ \ \ \ \ ALTFUNC10,}
+\DoxyCodeLine{00053\ \ \ \ \ ALTFUNC11,}
+\DoxyCodeLine{00054\ \ \ \ \ ALTFUNC12,}
+\DoxyCodeLine{00055\ \ \ \ \ ALTFUNC13,}
+\DoxyCodeLine{00056\ \ \ \ \ ALTFUNC14,}
+\DoxyCodeLine{00057\ \ \ \ \ ALTFUNC15}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_afac684914a9c0d5d3fda6a1b3fac0cf2}{writeHigh}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a2821ea10e2e3d00fa5f2908309454731}{writeLow}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a75d8b8f0d0cb8d42f140e7fd14a2cef5}{togglePin}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ uint8\_t\ \doxymbox{\hyperlink{gpioHandler_8h_a579dccbeb1f944a7cfc52deeb5455881}{getPinStatus}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ uint16\_t\ \doxymbox{\hyperlink{gpioHandler_8h_ae7c0508e690b144ff7f11adac07ad796}{getPortStatus}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a96238e2b428d2a115ea7dff223d2e53b}{virtualPwmWrite}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ value);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a66097f7bf35e3caade8d18e25e978b40}{pinStart}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}\ *\doxymbox{\hyperlink{structpin}{pin}},\ GPIO\_TypeDef*\ port,\ uint8\_t\ index,\ uint8\_t\ mode);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a72938a63988db1169dbf06233c812da7}{setPullDown}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a6542bc2f5bd28b1f23cd9ae34a4c98f0}{setPullUp}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ uint8\_t\ \doxymbox{\hyperlink{gpioHandler_8h_ac0a41e1bbc23adfb37877f09263a7413}{readPin}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{gpioHandler_8h_a2d53a70036a006552bd80533ebe25057}{alternativeFunction}}(\doxymbox{\hyperlink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin}}*\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ function);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

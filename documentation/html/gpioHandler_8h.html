@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stm32F4Library: gpioHandler.h File Reference</title>
+<title>stm32F4Library: Core/Inc/gpioHandler.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -132,15 +132,38 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aae5ed1f2ebd6ec332102c4f40bf46369" id="r_aae5ed1f2ebd6ec332102c4f40bf46369"><td class="memItemLeft"><a class="el" href="#aae5ed1f2ebd6ec332102c4f40bf46369">enum </a>&#160;</td><td class="memItemRight"></td></tr>
-<tr class="memdesc:aae5ed1f2ebd6ec332102c4f40bf46369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerate pin modes to provide more code understandment.  <a href="#aae5ed1f2ebd6ec332102c4f40bf46369">More...</a><br /></td></tr>
+<tr class="memitem:a7faba349f625c224719dad16be8d7feb" id="r_a7faba349f625c224719dad16be8d7feb"><td class="memItemLeft"><a class="el" href="#a7faba349f625c224719dad16be8d7feb">enum </a>&#160;</td><td class="memItemRight">{ <b>INPUT</b>
+, <b>OUTPUT</b>
+, <b>ALTERNATE</b>
+, <b>ANALOG</b>
+ }</td></tr>
+<tr class="memdesc:a7faba349f625c224719dad16be8d7feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerate pin modes to provide more code understandment.  <a href="#a7faba349f625c224719dad16be8d7feb">More...</a><br /></td></tr>
+<tr class="memitem:a885cfa50dacf0cdce8c988b1ca0d2996" id="r_a885cfa50dacf0cdce8c988b1ca0d2996"><td class="memItemLeft"><a id="a885cfa50dacf0cdce8c988b1ca0d2996" name="a885cfa50dacf0cdce8c988b1ca0d2996"></a><a class="el" href="#a885cfa50dacf0cdce8c988b1ca0d2996">enum </a>&#160;</td><td class="memItemRight">{ <br />
+&#160;&#160;<b>ALTFUNC0</b>
+, <b>ALTFUNC1</b>
+, <b>ALTFUNC2</b>
+, <b>ALTFUNC3</b>
+, <br />
+&#160;&#160;<b>ALTFUNC4</b>
+, <b>ALTFUNC5</b>
+, <b>ALTFUNC6</b>
+, <b>ALTFUNC7</b>
+, <br />
+&#160;&#160;<b>ALTFUNC8</b>
+, <b>ALTFUNC9</b>
+, <b>ALTFUNC10</b>
+, <b>ALTFUNC11</b>
+, <br />
+&#160;&#160;<b>ALTFUNC12</b>
+, <b>ALTFUNC13</b>
+, <b>ALTFUNC14</b>
+, <b>ALTFUNC15</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a885cfa50dacf0cdce8c988b1ca0d2996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerate alternate functions for the pins. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acb5a9898b0a5ed8695686b5ea2231bb7" id="r_acb5a9898b0a5ed8695686b5ea2231bb7"><td class="memItemLeft">enum  { ... } &#160;</td><td class="memItemRight"><a class="el" href="#acb5a9898b0a5ed8695686b5ea2231bb7">delay</a> (uint32_t ms)</td></tr>
-<tr class="memdesc:acb5a9898b0a5ed8695686b5ea2231bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle with specific miliseconds delays.  <br /></td></tr>
-<tr class="memitem:a95c290c60a77a6c9ae61b183f0d537ee" id="r_a95c290c60a77a6c9ae61b183f0d537ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a95c290c60a77a6c9ae61b183f0d537ee">microDelay</a> (uint32_t microSecond)</td></tr>
-<tr class="memdesc:a95c290c60a77a6c9ae61b183f0d537ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle with specific microseconds delays.  <br /></td></tr>
 <tr class="memitem:afac684914a9c0d5d3fda6a1b3fac0cf2" id="r_afac684914a9c0d5d3fda6a1b3fac0cf2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afac684914a9c0d5d3fda6a1b3fac0cf2">writeHigh</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
 <tr class="memdesc:afac684914a9c0d5d3fda6a1b3fac0cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write high state in a output pin.  <br /></td></tr>
 <tr class="memitem:a2821ea10e2e3d00fa5f2908309454731" id="r_a2821ea10e2e3d00fa5f2908309454731"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2821ea10e2e3d00fa5f2908309454731">writeLow</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
@@ -149,6 +172,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a75d8b8f0d0cb8d42f140e7fd14a2cef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate the state in a output pin.  <br /></td></tr>
 <tr class="memitem:a579dccbeb1f944a7cfc52deeb5455881" id="r_a579dccbeb1f944a7cfc52deeb5455881"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a579dccbeb1f944a7cfc52deeb5455881">getPinStatus</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
 <tr class="memdesc:a579dccbeb1f944a7cfc52deeb5455881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of a output pin.  <br /></td></tr>
+<tr class="memitem:ae7c0508e690b144ff7f11adac07ad796" id="r_ae7c0508e690b144ff7f11adac07ad796"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#ae7c0508e690b144ff7f11adac07ad796">getPortStatus</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
+<tr class="memdesc:ae7c0508e690b144ff7f11adac07ad796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of a port (Output or Input mode).  <br /></td></tr>
 <tr class="memitem:a96238e2b428d2a115ea7dff223d2e53b" id="r_a96238e2b428d2a115ea7dff223d2e53b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a96238e2b428d2a115ea7dff223d2e53b">virtualPwmWrite</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin, uint8_t value)</td></tr>
 <tr class="memdesc:a96238e2b428d2a115ea7dff223d2e53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a pwm in software in a gpio pin.  <br /></td></tr>
 <tr class="memitem:a66097f7bf35e3caade8d18e25e978b40" id="r_a66097f7bf35e3caade8d18e25e978b40"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66097f7bf35e3caade8d18e25e978b40">pinStart</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin, GPIO_TypeDef *port, uint8_t index, uint8_t mode)</td></tr>
@@ -159,17 +184,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6542bc2f5bd28b1f23cd9ae34a4c98f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pull up resistor to a input pin.  <br /></td></tr>
 <tr class="memitem:ac0a41e1bbc23adfb37877f09263a7413" id="r_ac0a41e1bbc23adfb37877f09263a7413"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#ac0a41e1bbc23adfb37877f09263a7413">readPin</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin)</td></tr>
 <tr class="memdesc:ac0a41e1bbc23adfb37877f09263a7413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a input pin.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab81ca9153c95d55639b4ab520bb2aa4d" id="r_ab81ca9153c95d55639b4ab520bb2aa4d"><td class="memItemLeft"><a id="ab81ca9153c95d55639b4ab520bb2aa4d" name="ab81ca9153c95d55639b4ab520bb2aa4d"></a>
-&#160;</td><td class="memItemRight"><b>INPUT</b></td></tr>
-<tr class="memitem:a3198f9593a6b56e6fc4678a14d413ff1" id="r_a3198f9593a6b56e6fc4678a14d413ff1"><td class="memItemLeft"><a id="a3198f9593a6b56e6fc4678a14d413ff1" name="a3198f9593a6b56e6fc4678a14d413ff1"></a>
-&#160;</td><td class="memItemRight"><b>OUTPUT</b></td></tr>
-<tr class="memitem:a19ac06159f9a285a3ea460ca28f3a17f" id="r_a19ac06159f9a285a3ea460ca28f3a17f"><td class="memItemLeft"><a id="a19ac06159f9a285a3ea460ca28f3a17f" name="a19ac06159f9a285a3ea460ca28f3a17f"></a>
-&#160;</td><td class="memItemRight"><b>ALTERNATE</b></td></tr>
-<tr class="memitem:a42d7c1c08349aca53f56ef5b04af9b85" id="r_a42d7c1c08349aca53f56ef5b04af9b85"><td class="memItemLeft"><a id="a42d7c1c08349aca53f56ef5b04af9b85" name="a42d7c1c08349aca53f56ef5b04af9b85"></a>
-&#160;</td><td class="memItemRight"><b>ANALOG</b></td></tr>
+<tr class="memitem:a2d53a70036a006552bd80533ebe25057" id="r_a2d53a70036a006552bd80533ebe25057"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2d53a70036a006552bd80533ebe25057">alternativeFunction</a> (<a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *pin, uint8_t function)</td></tr>
+<tr class="memdesc:a2d53a70036a006552bd80533ebe25057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an alternative function for a pin.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handle with GPIO. </p>
@@ -194,8 +210,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="aae5ed1f2ebd6ec332102c4f40bf46369" name="aae5ed1f2ebd6ec332102c4f40bf46369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae5ed1f2ebd6ec332102c4f40bf46369">&#9670;&#160;</a></span>anonymous enum</h2>
+<a id="a7faba349f625c224719dad16be8d7feb" name="a7faba349f625c224719dad16be8d7feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7faba349f625c224719dad16be8d7feb">&#9670;&#160;</a></span>anonymous enum</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,25 +228,30 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="acb5a9898b0a5ed8695686b5ea2231bb7" name="acb5a9898b0a5ed8695686b5ea2231bb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb5a9898b0a5ed8695686b5ea2231bb7">&#9670;&#160;</a></span>delay()</h2>
+<a id="a2d53a70036a006552bd80533ebe25057" name="a2d53a70036a006552bd80533ebe25057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d53a70036a006552bd80533ebe25057">&#9670;&#160;</a></span>alternativeFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum @302206043275153177023103113242045135311066264336 delay </td>
+          <td class="memname">void alternativeFunction </td>
           <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ms</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>function</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Handle with specific miliseconds delays. </p>
+<p>Set an alternative function for a pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ms</td><td>Time in ms to delay </td></tr>
+    <tr><td class="paramname">pin</td><td>Struct pin to be setted </td></tr>
+    <tr><td class="paramname">function</td><td>the alternative function to be setted, see the AltFunc enum for more informations </td></tr>
   </table>
   </dd>
 </dl>
@@ -263,28 +284,29 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a95c290c60a77a6c9ae61b183f0d537ee" name="a95c290c60a77a6c9ae61b183f0d537ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95c290c60a77a6c9ae61b183f0d537ee">&#9670;&#160;</a></span>microDelay()</h2>
+<a id="ae7c0508e690b144ff7f11adac07ad796" name="ae7c0508e690b144ff7f11adac07ad796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c0508e690b144ff7f11adac07ad796">&#9670;&#160;</a></span>getPortStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void microDelay </td>
+          <td class="memname">uint16_t getPortStatus </td>
           <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>microSecond</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ab56221afe20077413f85b299ce98f3de">Pin</a> *</td>          <td class="paramname"><span class="paramname"><em>pin</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Handle with specific microseconds delays. </p>
+<p>Get the status of a port (Output or Input mode). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">microSecond</td><td>Time in micro second to delay </td></tr>
+    <tr><td class="paramname">pin</td><td><a class="el" href="#ab56221afe20077413f85b299ce98f3de" title="Abstract pins of GPIOs.">Pin</a> to be read </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>A uint16_t that indicates the status of the port's pins </dd></dl>
 
 </div>
 </div>
@@ -525,7 +547,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="gpioHandler_8h.html">gpioHandler.h</a></li>
+    <li class="navelem"><b>Core</b></li><li class="navelem"><b>Inc</b></li><li class="navelem"><a href="gpioHandler_8h.html">gpioHandler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

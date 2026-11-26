@@ -1,0 +1,81 @@
+\doxysection{adc\+Handler.\+h}
+\hypertarget{adcHandler_8h_source}{}\label{adcHandler_8h_source}\index{Core/Inc/adcHandler.h@{Core/Inc/adcHandler.h}}
+\doxymbox{\hyperlink{adcHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ ADC\_HANDLER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ADC\_HANDLER\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{timerHandler_8h}{timerHandler.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ void\ (*function)(void);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ function\ ADC\_ISR[1];}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ RES12BITS,}
+\DoxyCodeLine{00023\ \ \ \ \ RES10BITS,}
+\DoxyCodeLine{00024\ \ \ \ \ RES8BITS,}
+\DoxyCodeLine{00025\ \ \ \ \ RES6BITS}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ SMP3,}
+\DoxyCodeLine{00030\ \ \ \ \ SMP15,}
+\DoxyCodeLine{00031\ \ \ \ \ SMP28,}
+\DoxyCodeLine{00032\ \ \ \ \ SMP56,}
+\DoxyCodeLine{00033\ \ \ \ \ SMP84,}
+\DoxyCodeLine{00034\ \ \ \ \ SMP112,}
+\DoxyCodeLine{00035\ \ \ \ \ SMP144,}
+\DoxyCodeLine{00036\ \ \ \ \ SMP480}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ ADC\_PA0,}
+\DoxyCodeLine{00041\ \ \ \ \ ADC\_PA1,}
+\DoxyCodeLine{00042\ \ \ \ \ ADC\_PA2,}
+\DoxyCodeLine{00043\ \ \ \ \ ADC\_PA3,}
+\DoxyCodeLine{00044\ \ \ \ \ ADC\_PA4,}
+\DoxyCodeLine{00045\ \ \ \ \ ADC\_PA5,}
+\DoxyCodeLine{00046\ \ \ \ \ ADC\_PA6,}
+\DoxyCodeLine{00047\ \ \ \ \ ADC\_PA7,}
+\DoxyCodeLine{00048\ \ \ \ \ ADC\_PB0,}
+\DoxyCodeLine{00049\ \ \ \ \ ADC\_PB1,}
+\DoxyCodeLine{00050\ \ \ \ \ ADC\_PC0,}
+\DoxyCodeLine{00051\ \ \ \ \ ADC\_PC1,}
+\DoxyCodeLine{00052\ \ \ \ \ ADC\_PC2,}
+\DoxyCodeLine{00053\ \ \ \ \ ADC\_PC3,}
+\DoxyCodeLine{00054\ \ \ \ \ ADC\_PC4,}
+\DoxyCodeLine{00055\ \ \ \ \ ADC\_PC5}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_a7fe2ac8fa5e6d2a57ef097b4398c7545}{adcSingleStart}}(ADC\_TypeDef*\ ADCx,\ uint8\_t\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ resolution);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_a7af81820c3d7047096704a0b0b888a30}{adcMultiStart}}(ADC\_TypeDef*\ ADCx,\ uint8\_t\ pins[],\ uint8\_t\ sizePins,\ uint8\_t\ resolution);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ uint16\_t\ \doxymbox{\hyperlink{adcHandler_8h_a087610462b5c1ca94a1199785cb47098}{getAdcSingleConversion}}(ADC\_TypeDef*\ ADCx);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_ade6a4c2655cee5d596f189b2425b7008}{getAdcMultiConversion}}(ADC\_TypeDef*\ ADCx,\ uint16\_t\ readPins[],\ uint8\_t\ sizePins);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_aa8a3d9281f0ff7da4ca2dc9dbbbfad4a}{initAdcInterrupt}}(ADC\_TypeDef*\ ADCx,\ function\ func);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_a495ecb7712041d628840d194bfd5f7cf}{getAdcInterruptConversion}}(ADC\_TypeDef*\ ADCx);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_a534e94d90f1ca9f440971709f204d03b}{adcTemperatureSensor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{adcHandler_8h_a4fb224f7fc25db97ecaff2f91517531b}{getTemperature}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{adcHandler_8h_aff3ccf42976a80d6a0c8c6f478ecb1ca}{adcExternInterruptOn}}(ADC\_TypeDef*\ ADCx);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_a913f128def93676e9a5d6997cd09da23}{watchdogAdc}}(ADC\_TypeDef*\ ADCx,\ uint8\_t\ \doxymbox{\hyperlink{structpin}{pin}},\ uint32\_t\ highLimit,\ uint32\_t\ lowLimit);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_adf01a226feb32b08f8cf5203acf1d613}{getWatchdog}}(ADC\_TypeDef*\ ADCx,\ function\ func);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{adcHandler_8h_a06406eadf297fa89a6eaf9586b227a69}{ADC\_IRQHandler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

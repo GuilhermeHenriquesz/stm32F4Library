@@ -1,0 +1,54 @@
+\doxysection{timer\+Handler.\+h}
+\hypertarget{timerHandler_8h_source}{}\label{timerHandler_8h_source}\index{Core/Inc/timerHandler.h@{Core/Inc/timerHandler.h}}
+\doxymbox{\hyperlink{timerHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ TIMER\_HANDLER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ TIMER\_HANDLER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TIM1}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{gpioHandler_8h}{gpioHandler.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{static}\ uint8\_t\ isInitiated\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \doxymbox{\hyperlink{structTimerChannel_a688f64a48fe5c1416547a72631cd8122}{controlRegister}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \doxymbox{\hyperlink{structTimerChannel_a4d5059f0fb81e2accde03057377542ce}{captureCompareMode}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t*\ \doxymbox{\hyperlink{structTimerChannel_a80b37785fd8e486d8d8e4e35c5d3a519}{captureCompare}};\ }
+\DoxyCodeLine{00024\ \}\doxymbox{\hyperlink{structTimerChannel}{TimerChannel}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ void\ (*function)(void);}
+\DoxyCodeLine{00027\ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ function\ ISRsADC[5];}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ UPCOUNTER,}
+\DoxyCodeLine{00031\ \ \ \ \ DOWNCOUNTER,}
+\DoxyCodeLine{00032\ \ \ \ \ UPDOWNCOUNTER}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_ac8482246f1f22349aa95567299e9144d}{delayInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_a7f2dfce1046bdd2a2b753643726c2346}{delay}}(uint32\_t\ ms);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_a1b5bceae3dbccad22a96fbc2022690ff}{microDelay}}(uint32\_t\ microSeconds);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_aca770d1a374106e4cc1f940781d22046}{sysTick}}(uint32\_t\ reloadValue,\ function\ func);\ \textcolor{comment}{//\ Clock\ 168Mhz}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_af712abccf957cacf3c79c01077529623}{timerStart}}(TIM\_TypeDef*\ TIMx,\ uint16\_t\ prescaler,\ uint32\_t\ reload,\ uint8\_t\ countForm);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_ae75792d4c23a5171441daa1967fe89a2}{timerInterruption}}(TIM\_TypeDef*\ TIMx,\ uint16\_t\ prescaler,\ uint32\_t\ reload,\ uint8\_t\ countForm,\ function\ func);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//void\ timerPWM(TIM\_TypeDef*\ TIMx,\ uint16\_t\ prescaler,\ uint32\_t\ reload,\ uint8\_t\ countForm);}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_aa6a0f928469179253af980a6eb56cbcf}{timerChannelStart}}(\doxymbox{\hyperlink{structTimerChannel}{TimerChannel}}*\ toStart,\ TIM\_TypeDef*\ timer,\ uint8\_t\ channel);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_a30245308cc2e358c8d874a96f82fd53f}{setDuty}}(\doxymbox{\hyperlink{structTimerChannel}{TimerChannel}}*\ channel,\ uint32\_t\ duty);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ uint32\_t\ \doxymbox{\hyperlink{timerHandler_8h_ae6d1cfbe6249b741e0683409af243f50}{getTimer}}(TIM\_TypeDef*\ TIMx);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{timerHandler_8h_ae2e2f022395e2e727b35f0eded380331}{resetTimer}}(TIM\_TypeDef*\ TIMx);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\doxysection{Timer\+Channel Struct Reference}
+\hypertarget{structTimerChannel}{}\label{structTimerChannel}\index{TimerChannel@{TimerChannel}}
+
+
+\doxylink{structTimerChannel}{Timer\+Channel} struct to abstract the channel struct.  
+
+
+
+
+{\ttfamily \+\#include $<$timer\+Handler.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structTimerChannel_a688f64a48fe5c1416547a72631cd8122}{control\+Register}}
+\item 
+volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structTimerChannel_a4d5059f0fb81e2accde03057377542ce}{capture\+Compare\+Mode}}
+\item 
+volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{structTimerChannel_a80b37785fd8e486d8d8e4e35c5d3a519}{capture\+Compare}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structTimerChannel}{Timer\+Channel} struct to abstract the channel struct. 
+
+\label{structTimerChannel_doc-variable-members}
+\Hypertarget{structTimerChannel_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structTimerChannel_a80b37785fd8e486d8d8e4e35c5d3a519}\index{TimerChannel@{TimerChannel}!captureCompare@{captureCompare}}
+\index{captureCompare@{captureCompare}!TimerChannel@{TimerChannel}}
+\doxysubsubsection{\texorpdfstring{captureCompare}{captureCompare}}
+{\footnotesize\ttfamily \label{structTimerChannel_a80b37785fd8e486d8d8e4e35c5d3a519} 
+volatile uint32\+\_\+t\texorpdfstring{$\ast$}{*} Timer\+Channel::\+capture\+Compare}
+
+The register CCR of the struct TIMER \Hypertarget{structTimerChannel_a4d5059f0fb81e2accde03057377542ce}\index{TimerChannel@{TimerChannel}!captureCompareMode@{captureCompareMode}}
+\index{captureCompareMode@{captureCompareMode}!TimerChannel@{TimerChannel}}
+\doxysubsubsection{\texorpdfstring{captureCompareMode}{captureCompareMode}}
+{\footnotesize\ttfamily \label{structTimerChannel_a4d5059f0fb81e2accde03057377542ce} 
+volatile uint32\+\_\+t\texorpdfstring{$\ast$}{*} Timer\+Channel::\+capture\+Compare\+Mode}
+
+The register CCRM of the struct TIMER \Hypertarget{structTimerChannel_a688f64a48fe5c1416547a72631cd8122}\index{TimerChannel@{TimerChannel}!controlRegister@{controlRegister}}
+\index{controlRegister@{controlRegister}!TimerChannel@{TimerChannel}}
+\doxysubsubsection{\texorpdfstring{controlRegister}{controlRegister}}
+{\footnotesize\ttfamily \label{structTimerChannel_a688f64a48fe5c1416547a72631cd8122} 
+volatile uint32\+\_\+t\texorpdfstring{$\ast$}{*} Timer\+Channel::\+control\+Register}
+
+A control register of the struct TIMER 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Core/\+\+Inc/\doxymbox{\hyperlink{timerHandler_8h}{timer\+Handler.\+h}}\end{DoxyCompactItemize}

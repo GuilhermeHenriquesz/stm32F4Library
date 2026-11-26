@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stm32F4Library: interruptHandler.h Source File</title>
+<title>stm32F4Library: Core/Inc/interruptHandler.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('interruptHandl
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">typedef</span> void (*function)(void);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">static</span> <span class="keyword">volatile</span> function ISRs[7];</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">static</span> <span class="keyword">volatile</span> function ISRs[16];</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">enum</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    FALLING,</div>
@@ -145,13 +145,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('interruptHandl
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> EXTI15_10_IRQHandler(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> interruptiOn(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="interruptHandler_8h.html#ab933c789821ce226d05cf7f66573ec00">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="interruptHandler_8h.html#ab933c789821ce226d05cf7f66573ec00">interruptiOn</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> interruptPin(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>, uint8_t edge, uint8_t priority, function func);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="interruptHandler_8h.html#a87bc3ce7a770dbfa2cc6e49c5038560d">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="interruptHandler_8h.html#a87bc3ce7a770dbfa2cc6e49c5038560d">interruptPin</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>, uint8_t edge, uint8_t priority, function func);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agpioHandler_8h_html"><div class="ttname"><a href="gpioHandler_8h.html">gpioHandler.h</a></div><div class="ttdoc">Handle with GPIO.</div></div>
 <div class="ttc" id="agpioHandler_8h_html_ab56221afe20077413f85b299ce98f3de"><div class="ttname"><a href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a></div><div class="ttdeci">struct pin Pin</div><div class="ttdoc">Abstract pins of GPIOs.</div></div>
+<div class="ttc" id="ainterruptHandler_8h_html_a87bc3ce7a770dbfa2cc6e49c5038560d"><div class="ttname"><a href="interruptHandler_8h.html#a87bc3ce7a770dbfa2cc6e49c5038560d">interruptPin</a></div><div class="ttdeci">void interruptPin(Pin *pin, uint8_t edge, uint8_t priority, function func)</div><div class="ttdoc">Set up the interruption in a pin.</div></div>
+<div class="ttc" id="ainterruptHandler_8h_html_ab933c789821ce226d05cf7f66573ec00"><div class="ttname"><a href="interruptHandler_8h.html#ab933c789821ce226d05cf7f66573ec00">interruptiOn</a></div><div class="ttdeci">void interruptiOn(void)</div><div class="ttdoc">Initiate SysCfg clock to enable interruptions.</div></div>
 <div class="ttc" id="astructpin_html"><div class="ttname"><a href="structpin.html">pin</a></div><div class="ttdoc">Abstract pins of GPIOs.</div><div class="ttdef"><b>Definition</b> gpioHandler.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -159,7 +161,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('interruptHandl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="interruptHandler_8h.html">interruptHandler.h</a></li>
+    <li class="navelem"><b>Core</b></li><li class="navelem"><b>Inc</b></li><li class="navelem"><a href="interruptHandler_8h.html">interruptHandler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

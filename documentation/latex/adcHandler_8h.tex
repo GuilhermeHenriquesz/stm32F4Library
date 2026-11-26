@@ -1,0 +1,287 @@
+\doxysection{Core/\+\+Inc/\+adc\+Handler.h File Reference}
+\hypertarget{adcHandler_8h}{}\label{adcHandler_8h}\index{Core/Inc/adcHandler.h@{Core/Inc/adcHandler.h}}
+
+
+Handle with GPIO.  
+
+
+{\ttfamily \+\#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \+\#include "{}timer\+Handler.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{adcHandler_8h_a83e68104553ba40af8ccb86fe4c94c8a}\label{adcHandler_8h_a83e68104553ba40af8ccb86fe4c94c8a} 
+typedef void(\texorpdfstring{$\ast$}{*}) {\bfseries function}(void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{adcHandler_8h_a2c7231bf03e5df3461cb392de20b2cd5}\label{adcHandler_8h_a2c7231bf03e5df3461cb392de20b2cd5} 
+\doxymbox{\hyperlink{adcHandler_8h_a2c7231bf03e5df3461cb392de20b2cd5}{enum }}\{ {\bfseries RES12\+BITS}
+, {\bfseries RES10\+BITS}
+, {\bfseries RES8\+BITS}
+, {\bfseries RES6\+BITS}
+ \}
+\item 
+\Hypertarget{adcHandler_8h_af669b315d3205d673d1f492b3dfa9049}\label{adcHandler_8h_af669b315d3205d673d1f492b3dfa9049} 
+\doxymbox{\hyperlink{adcHandler_8h_af669b315d3205d673d1f492b3dfa9049}{enum }}\{ \newline
+{\bfseries SMP3}
+, {\bfseries SMP15}
+, {\bfseries SMP28}
+, {\bfseries SMP56}
+, \newline
+{\bfseries SMP84}
+, {\bfseries SMP112}
+, {\bfseries SMP144}
+, {\bfseries SMP480}
+ \}
+\item 
+\Hypertarget{adcHandler_8h_a5802f7f4143fe332be2d1e19323abf16}\label{adcHandler_8h_a5802f7f4143fe332be2d1e19323abf16} 
+\doxymbox{\hyperlink{adcHandler_8h_a5802f7f4143fe332be2d1e19323abf16}{enum }}\{ \newline
+{\bfseries ADC\+\_\+\+PA0}
+, {\bfseries ADC\+\_\+\+PA1}
+, {\bfseries ADC\+\_\+\+PA2}
+, {\bfseries ADC\+\_\+\+PA3}
+, \newline
+{\bfseries ADC\+\_\+\+PA4}
+, {\bfseries ADC\+\_\+\+PA5}
+, {\bfseries ADC\+\_\+\+PA6}
+, {\bfseries ADC\+\_\+\+PA7}
+, \newline
+{\bfseries ADC\+\_\+\+PB0}
+, {\bfseries ADC\+\_\+\+PB1}
+, {\bfseries ADC\+\_\+\+PC0}
+, {\bfseries ADC\+\_\+\+PC1}
+, \newline
+{\bfseries ADC\+\_\+\+PC2}
+, {\bfseries ADC\+\_\+\+PC3}
+, {\bfseries ADC\+\_\+\+PC4}
+, {\bfseries ADC\+\_\+\+PC5}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{adcHandler_8h_a7fe2ac8fa5e6d2a57ef097b4398c7545}{adc\+Single\+Start}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, uint8\+\_\+t pin, uint8\+\_\+t resolution)
+\begin{DoxyCompactList}\small\item\em Start a single channel ADC. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{adcHandler_8h_a7af81820c3d7047096704a0b0b888a30}{adc\+Multi\+Start}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, uint8\+\_\+t pins\+[$\,$]\+, uint8\+\_\+t size\+Pins, uint8\+\_\+t resolution)
+\begin{DoxyCompactList}\small\item\em Start multiple channels in an ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \doxymbox{\hyperlink{adcHandler_8h_a087610462b5c1ca94a1199785cb47098}{get\+Adc\+Single\+Conversion}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx)
+\begin{DoxyCompactList}\small\item\em Get a single channel conversion of an ADC. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{adcHandler_8h_ade6a4c2655cee5d596f189b2425b7008}{get\+Adc\+Multi\+Conversion}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, uint16\+\_\+t read\+Pins\+[$\,$]\+, uint8\+\_\+t size\+Pins)
+\begin{DoxyCompactList}\small\item\em Get multiple channels conversions of an ADC. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{adcHandler_8h_aa8a3d9281f0ff7da4ca2dc9dbbbfad4a}{init\+Adc\+Interrupt}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, function func)
+\begin{DoxyCompactList}\small\item\em Add an interruption in an ADC. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{adcHandler_8h_a495ecb7712041d628840d194bfd5f7cf}{get\+Adc\+Interrupt\+Conversion}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx)
+\begin{DoxyCompactList}\small\item\em Get an ADC by a interrupt instead of waiting in a while looping. \end{DoxyCompactList}\item 
+\Hypertarget{adcHandler_8h_a534e94d90f1ca9f440971709f204d03b}\label{adcHandler_8h_a534e94d90f1ca9f440971709f204d03b} 
+void {\bfseries adc\+Temperature\+Sensor} (void)
+\begin{DoxyCompactList}\small\item\em Init the temperature sensor of the STM32. \end{DoxyCompactList}\item 
+float \doxymbox{\hyperlink{adcHandler_8h_a4fb224f7fc25db97ecaff2f91517531b}{get\+Temperature}} (void)
+\begin{DoxyCompactList}\small\item\em Get the temperature from the temperature sensor. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{adcHandler_8h_aff3ccf42976a80d6a0c8c6f478ecb1ca}{adc\+Extern\+Interrupt\+On}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx)
+\begin{DoxyCompactList}\small\item\em Extern interruption in an ADC to read the ADCs value. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{adcHandler_8h_a913f128def93676e9a5d6997cd09da23}{watchdog\+Adc}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, uint8\+\_\+t pin, uint32\+\_\+t high\+Limit, uint32\+\_\+t low\+Limit)
+\begin{DoxyCompactList}\small\item\em Set up the watch dog ADC that compares values to make an interruption. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{adcHandler_8h_adf01a226feb32b08f8cf5203acf1d613}{get\+Watchdog}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, function func)
+\begin{DoxyCompactList}\small\item\em Pass a function to oficially enable the watch dog adc. \end{DoxyCompactList}\item 
+\Hypertarget{adcHandler_8h_a06406eadf297fa89a6eaf9586b227a69}\label{adcHandler_8h_a06406eadf297fa89a6eaf9586b227a69} 
+void {\bfseries ADC\+\_\+\+IRQHandler} (void)
+\begin{DoxyCompactList}\small\item\em Function that encapsulates the functions of ADC interrupt passed by parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with GPIO. 
+
+\begin{DoxyAuthor}{Authors}
+Fabio Henrique and Guilherme Henriques
+\end{DoxyAuthor}
+
+
+\begin{DoxyDate}{Date}
+2026-\/11-\/06 
+\end{DoxyDate}
+
+
+\label{adcHandler_8h_doc-func-members}
+\Hypertarget{adcHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{adcHandler_8h_aff3ccf42976a80d6a0c8c6f478ecb1ca}\index{adcHandler.h@{adcHandler.h}!adcExternInterruptOn@{adcExternInterruptOn}}
+\index{adcExternInterruptOn@{adcExternInterruptOn}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{adcExternInterruptOn()}{adcExternInterruptOn()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_aff3ccf42976a80d6a0c8c6f478ecb1ca} 
+int adc\+Extern\+Interrupt\+On (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{}\end{DoxyParamCaption})}
+
+
+
+Extern interruption in an ADC to read the ADCs value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be interrupted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int return the value of the ADC 
+\end{DoxyReturn}
+\Hypertarget{adcHandler_8h_a7af81820c3d7047096704a0b0b888a30}\index{adcHandler.h@{adcHandler.h}!adcMultiStart@{adcMultiStart}}
+\index{adcMultiStart@{adcMultiStart}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{adcMultiStart()}{adcMultiStart()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_a7af81820c3d7047096704a0b0b888a30} 
+void adc\+Multi\+Start (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{, }\item[{uint8\+\_\+t}]{pins}{\+[$\,$], }\item[{uint8\+\_\+t}]{size\+Pins}{, }\item[{uint8\+\_\+t}]{resolution}{}\end{DoxyParamCaption})}
+
+
+
+Start multiple channels in an ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be started \\
+\hline
+{\em pins} & Array of pins from enum ADC pins to be started, see the ADC \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} enum for more information \\
+\hline
+{\em size\+Pins} & Size of the array of pins \\
+\hline
+{\em resolution} & Resolution of the ADC, see the ADC Resolution enum for more information \\
+\hline
+\end{DoxyParams}
+\Hypertarget{adcHandler_8h_a7fe2ac8fa5e6d2a57ef097b4398c7545}\index{adcHandler.h@{adcHandler.h}!adcSingleStart@{adcSingleStart}}
+\index{adcSingleStart@{adcSingleStart}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{adcSingleStart()}{adcSingleStart()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_a7fe2ac8fa5e6d2a57ef097b4398c7545} 
+void adc\+Single\+Start (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{resolution}{}\end{DoxyParamCaption})}
+
+
+
+Start a single channel ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be started \\
+\hline
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} of ADC to be started, see the ADC \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} enum for more information \\
+\hline
+{\em resolution} & Resolution of the ADC, see the ADC Resolution enum for more information \\
+\hline
+\end{DoxyParams}
+\Hypertarget{adcHandler_8h_a495ecb7712041d628840d194bfd5f7cf}\index{adcHandler.h@{adcHandler.h}!getAdcInterruptConversion@{getAdcInterruptConversion}}
+\index{getAdcInterruptConversion@{getAdcInterruptConversion}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{getAdcInterruptConversion()}{getAdcInterruptConversion()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_a495ecb7712041d628840d194bfd5f7cf} 
+void get\+Adc\+Interrupt\+Conversion (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{}\end{DoxyParamCaption})}
+
+
+
+Get an ADC by a interrupt instead of waiting in a while looping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be readed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{adcHandler_8h_ade6a4c2655cee5d596f189b2425b7008}\index{adcHandler.h@{adcHandler.h}!getAdcMultiConversion@{getAdcMultiConversion}}
+\index{getAdcMultiConversion@{getAdcMultiConversion}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{getAdcMultiConversion()}{getAdcMultiConversion()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_ade6a4c2655cee5d596f189b2425b7008} 
+void get\+Adc\+Multi\+Conversion (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{, }\item[{uint16\+\_\+t}]{read\+Pins}{\+[$\,$], }\item[{uint8\+\_\+t}]{size\+Pins}{}\end{DoxyParamCaption})}
+
+
+
+Get multiple channels conversions of an ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to get multiple values \\
+\hline
+{\em read\+Pins} & Array of uint16\+\_\+t to store all the values of the channels \\
+\hline
+{\em size\+Pins} & Length of the read\+Pins array \\
+\hline
+\end{DoxyParams}
+\Hypertarget{adcHandler_8h_a087610462b5c1ca94a1199785cb47098}\index{adcHandler.h@{adcHandler.h}!getAdcSingleConversion@{getAdcSingleConversion}}
+\index{getAdcSingleConversion@{getAdcSingleConversion}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{getAdcSingleConversion()}{getAdcSingleConversion()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_a087610462b5c1ca94a1199785cb47098} 
+uint16\+\_\+t get\+Adc\+Single\+Conversion (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{}\end{DoxyParamCaption})}
+
+
+
+Get a single channel conversion of an ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to get a value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t value read in the ADC 
+\end{DoxyReturn}
+\Hypertarget{adcHandler_8h_a4fb224f7fc25db97ecaff2f91517531b}\index{adcHandler.h@{adcHandler.h}!getTemperature@{getTemperature}}
+\index{getTemperature@{getTemperature}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{getTemperature()}{getTemperature()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_a4fb224f7fc25db97ecaff2f91517531b} 
+float get\+Temperature (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the temperature from the temperature sensor. 
+
+\begin{DoxyReturn}{Returns}
+float the value of the temperature in Celsius 
+\end{DoxyReturn}
+\Hypertarget{adcHandler_8h_adf01a226feb32b08f8cf5203acf1d613}\index{adcHandler.h@{adcHandler.h}!getWatchdog@{getWatchdog}}
+\index{getWatchdog@{getWatchdog}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{getWatchdog()}{getWatchdog()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_adf01a226feb32b08f8cf5203acf1d613} 
+void get\+Watchdog (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{, }\item[{function}]{func}{}\end{DoxyParamCaption})}
+
+
+
+Pass a function to oficially enable the watch dog adc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be readed \\
+\hline
+{\em func} & Function to interrupt \\
+\hline
+\end{DoxyParams}
+\Hypertarget{adcHandler_8h_aa8a3d9281f0ff7da4ca2dc9dbbbfad4a}\index{adcHandler.h@{adcHandler.h}!initAdcInterrupt@{initAdcInterrupt}}
+\index{initAdcInterrupt@{initAdcInterrupt}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{initAdcInterrupt()}{initAdcInterrupt()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_aa8a3d9281f0ff7da4ca2dc9dbbbfad4a} 
+void init\+Adc\+Interrupt (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{, }\item[{function}]{func}{}\end{DoxyParamCaption})}
+
+
+
+Add an interruption in an ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be interrupted \\
+\hline
+{\em func} & A function to be executed on the interruption \\
+\hline
+\end{DoxyParams}
+\Hypertarget{adcHandler_8h_a913f128def93676e9a5d6997cd09da23}\index{adcHandler.h@{adcHandler.h}!watchdogAdc@{watchdogAdc}}
+\index{watchdogAdc@{watchdogAdc}!adcHandler.h@{adcHandler.h}}
+\doxysubsubsection{\texorpdfstring{watchdogAdc()}{watchdogAdc()}}
+{\footnotesize\ttfamily \label{adcHandler_8h_a913f128def93676e9a5d6997cd09da23} 
+void watchdog\+Adc (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{uint32\+\_\+t}]{high\+Limit}{, }\item[{uint32\+\_\+t}]{low\+Limit}{}\end{DoxyParamCaption})}
+
+
+
+Set up the watch dog ADC that compares values to make an interruption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & ADC to be readed \\
+\hline
+{\em pin} & ADC \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to be readed, see the ADC \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} enum for more information \\
+\hline
+{\em high\+Limit} & the higher limit to compare \\
+\hline
+{\em low\+Limit} & the lower limit to compare \\
+\hline
+\end{DoxyParams}

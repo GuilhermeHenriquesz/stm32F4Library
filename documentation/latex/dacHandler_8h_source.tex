@@ -1,0 +1,55 @@
+\doxysection{dac\+Handler.\+h}
+\hypertarget{dacHandler_8h_source}{}\label{dacHandler_8h_source}\index{Core/Inc/dacHandler.h@{Core/Inc/dacHandler.h}}
+\doxymbox{\hyperlink{dacHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ DAC\_HANDLER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ DAC\_HANDLER\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00017\ \ \ \ \ DAC\_PA4,}
+\DoxyCodeLine{00018\ \ \ \ \ DAC\_PA5}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ DHR8R,}
+\DoxyCodeLine{00023\ \ \ \ \ DHR12L,}
+\DoxyCodeLine{00024\ \ \ \ \ DHR12R,}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ DISABLEDWAVE,}
+\DoxyCodeLine{00029\ \ \ \ \ NOISEWAVE,}
+\DoxyCodeLine{00030\ \ \ \ \ TRIANGLEWAVE}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ AMP1BIT,}
+\DoxyCodeLine{00035\ \ \ \ \ AMP2BITS,}
+\DoxyCodeLine{00036\ \ \ \ \ AMP3BITS,}
+\DoxyCodeLine{00037\ \ \ \ \ AMP4BITS,}
+\DoxyCodeLine{00038\ \ \ \ \ AMP5BITS,}
+\DoxyCodeLine{00039\ \ \ \ \ AMP6BITS,}
+\DoxyCodeLine{00040\ \ \ \ \ AMP7BITS,}
+\DoxyCodeLine{00041\ \ \ \ \ AMP8BITS,}
+\DoxyCodeLine{00042\ \ \ \ \ AMP9BITS,}
+\DoxyCodeLine{00043\ \ \ \ \ AMP10BITS,}
+\DoxyCodeLine{00044\ \ \ \ \ AMP11BITS,}
+\DoxyCodeLine{00045\ \ \ \ \ AMP12BITS}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{dacHandler_8h_a1495bc2488762f4a74ff90914718c201}{dacStart}}(uint8\_t\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ resolution);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{dacHandler_8h_af31fb57956fb8b52a86ce9bc6c9e2a89}{dacStart2}}(uint8\_t\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ resolution,\ uint8\_t\ waveform,\ uint8\_t\ amplitude);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{dacHandler_8h_a26c8cbd650bb74096e639b25e4ed8f27}{dacSetValue}}(uint8\_t\ \doxymbox{\hyperlink{structpin}{pin}},\ uint8\_t\ resolution,\ uint16\_t\ value);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{dacHandler_8h_ae9ff4a620de0ca4b2963d0b0487c62e1}{dacTrigger}}(uint8\_t\ \doxymbox{\hyperlink{structpin}{pin}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

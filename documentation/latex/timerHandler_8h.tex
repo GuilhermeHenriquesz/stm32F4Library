@@ -1,0 +1,220 @@
+\doxysection{Core/\+\+Inc/\+timer\+Handler.h File Reference}
+\hypertarget{timerHandler_8h}{}\label{timerHandler_8h}\index{Core/Inc/timerHandler.h@{Core/Inc/timerHandler.h}}
+
+
+Handle with temporization functions.  
+
+
+{\ttfamily \+\#include "{}gpio\+Handler.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structTimerChannel}{Timer\+Channel}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structTimerChannel}{Timer\+Channel} struct to abstract the channel struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{timerHandler_8h_aac432b1c2c2fc3cf64255fcb9f32bf2b}\label{timerHandler_8h_aac432b1c2c2fc3cf64255fcb9f32bf2b} 
+\doxymbox{\hyperlink{timerHandler_8h_aac432b1c2c2fc3cf64255fcb9f32bf2b}{enum }}\{ {\bfseries UPCOUNTER}
+, {\bfseries DOWNCOUNTER}
+, {\bfseries UPDOWNCOUNTER}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{timerHandler_8h_ac8482246f1f22349aa95567299e9144d}\label{timerHandler_8h_ac8482246f1f22349aa95567299e9144d} 
+void {\bfseries delay\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initiate the timer delay configs(\+Timer used is timer 2). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_a7f2dfce1046bdd2a2b753643726c2346}{delay}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Miliseconds delay. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_a1b5bceae3dbccad22a96fbc2022690ff}{micro\+Delay}} (uint32\+\_\+t micro\+Seconds)
+\begin{DoxyCompactList}\small\item\em Microseconds delay. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_aca770d1a374106e4cc1f940781d22046}{sys\+Tick}} (uint32\+\_\+t reload\+Value, function func)
+\begin{DoxyCompactList}\small\item\em Sys\+Tick Configure. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_af712abccf957cacf3c79c01077529623}{timer\+Start}} (TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t prescaler, uint32\+\_\+t reload, uint8\+\_\+t count\+Form)
+\begin{DoxyCompactList}\small\item\em Timer Configuration. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_ae75792d4c23a5171441daa1967fe89a2}{timer\+Interruption}} (TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t prescaler, uint32\+\_\+t reload, uint8\+\_\+t count\+Form, function func)
+\begin{DoxyCompactList}\small\item\em Set a Timer to interrupt. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_aa6a0f928469179253af980a6eb56cbcf}{timer\+Channel\+Start}} (\doxymbox{\hyperlink{structTimerChannel}{Timer\+Channel}} \texorpdfstring{$\ast$}{*}to\+Start, TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}timer, uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Start up the timer channel. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_a30245308cc2e358c8d874a96f82fd53f}{set\+Duty}} (\doxymbox{\hyperlink{structTimerChannel}{Timer\+Channel}} \texorpdfstring{$\ast$}{*}channel, uint32\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Set the Duty\+Cycle of a PWM channel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{timerHandler_8h_ae6d1cfbe6249b741e0683409af243f50}{get\+Timer}} (TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Get the Timer time. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{timerHandler_8h_ae2e2f022395e2e727b35f0eded380331}{reset\+Timer}} (TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Resets timer count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with temporization functions. 
+
+\begin{DoxyAuthor}{Authors}
+Fabio Henrique and Guilherme Henriques 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026-\/09-\/21 
+\end{DoxyDate}
+
+
+\label{timerHandler_8h_doc-func-members}
+\Hypertarget{timerHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{timerHandler_8h_a7f2dfce1046bdd2a2b753643726c2346}\index{timerHandler.h@{timerHandler.h}!delay@{delay}}
+\index{delay@{delay}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_a7f2dfce1046bdd2a2b753643726c2346} 
+void delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms}{}\end{DoxyParamCaption})}
+
+
+
+Miliseconds delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & miliseconds to be delayed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_ae6d1cfbe6249b741e0683409af243f50}\index{timerHandler.h@{timerHandler.h}!getTimer@{getTimer}}
+\index{getTimer@{getTimer}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{getTimer()}{getTimer()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_ae6d1cfbe6249b741e0683409af243f50} 
+uint32\+\_\+t get\+Timer (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{TIMx}{}\end{DoxyParamCaption})}
+
+
+
+Get the Timer time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & Struct TIMER to get time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t the value of the register CNT that represents the value of the time passed 
+\end{DoxyReturn}
+\Hypertarget{timerHandler_8h_a1b5bceae3dbccad22a96fbc2022690ff}\index{timerHandler.h@{timerHandler.h}!microDelay@{microDelay}}
+\index{microDelay@{microDelay}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{microDelay()}{microDelay()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_a1b5bceae3dbccad22a96fbc2022690ff} 
+void micro\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{micro\+Seconds}{}\end{DoxyParamCaption})}
+
+
+
+Microseconds delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em micro\+Seconds} & microseconds to be delayed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_ae2e2f022395e2e727b35f0eded380331}\index{timerHandler.h@{timerHandler.h}!resetTimer@{resetTimer}}
+\index{resetTimer@{resetTimer}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{resetTimer()}{resetTimer()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_ae2e2f022395e2e727b35f0eded380331} 
+void reset\+Timer (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{TIMx}{}\end{DoxyParamCaption})}
+
+
+
+Resets timer count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & Struct TIMER to be reseted \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_a30245308cc2e358c8d874a96f82fd53f}\index{timerHandler.h@{timerHandler.h}!setDuty@{setDuty}}
+\index{setDuty@{setDuty}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{setDuty()}{setDuty()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_a30245308cc2e358c8d874a96f82fd53f} 
+void set\+Duty (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structTimerChannel}{Timer\+Channel}} \texorpdfstring{$\ast$}{*}}]{channel}{, }\item[{uint32\+\_\+t}]{duty}{}\end{DoxyParamCaption})}
+
+
+
+Set the Duty\+Cycle of a PWM channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & Struct \doxylink{structTimerChannel}{Timer\+Channel} to update the duty value \\
+\hline
+{\em duty} & The value to be passed to be the duty cycle \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_aca770d1a374106e4cc1f940781d22046}\index{timerHandler.h@{timerHandler.h}!sysTick@{sysTick}}
+\index{sysTick@{sysTick}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{sysTick()}{sysTick()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_aca770d1a374106e4cc1f940781d22046} 
+void sys\+Tick (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{reload\+Value}{, }\item[{function}]{func}{}\end{DoxyParamCaption})}
+
+
+
+Sys\+Tick Configure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reload\+Value} & Value to reload in the time to be counting down \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_aa6a0f928469179253af980a6eb56cbcf}\index{timerHandler.h@{timerHandler.h}!timerChannelStart@{timerChannelStart}}
+\index{timerChannelStart@{timerChannelStart}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{timerChannelStart()}{timerChannelStart()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_aa6a0f928469179253af980a6eb56cbcf} 
+void timer\+Channel\+Start (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structTimerChannel}{Timer\+Channel}} \texorpdfstring{$\ast$}{*}}]{to\+Start}{, }\item[{TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{timer}{, }\item[{uint8\+\_\+t}]{channel}{}\end{DoxyParamCaption})}
+
+
+
+Start up the timer channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Start} & Struct \doxylink{structTimerChannel}{Timer\+Channel} that represents the channel \\
+\hline
+{\em timer} & Struct TIMER to get the timer\+Channel attributes \\
+\hline
+{\em channel} & Value between 1 and 4 that represents the channel \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_ae75792d4c23a5171441daa1967fe89a2}\index{timerHandler.h@{timerHandler.h}!timerInterruption@{timerInterruption}}
+\index{timerInterruption@{timerInterruption}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{timerInterruption()}{timerInterruption()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_ae75792d4c23a5171441daa1967fe89a2} 
+void timer\+Interruption (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{TIMx}{, }\item[{uint16\+\_\+t}]{prescaler}{, }\item[{uint32\+\_\+t}]{reload}{, }\item[{uint8\+\_\+t}]{count\+Form}{, }\item[{function}]{func}{}\end{DoxyParamCaption})}
+
+
+
+Set a Timer to interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & Struct TIMER to be interrupted \\
+\hline
+{\em prescaler} & Value that divides the clock, originally 86Mhz \\
+\hline
+{\em reload} & Value to be putted on the ARR register, reloading the timer each time it ends \\
+\hline
+{\em count\+Form} & An element of the count form enum that represents the way that the timer will count(ascendent, descendent, up/\+down) \\
+\hline
+{\em func} & A function that will execute every reset event of the timer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timerHandler_8h_af712abccf957cacf3c79c01077529623}\index{timerHandler.h@{timerHandler.h}!timerStart@{timerStart}}
+\index{timerStart@{timerStart}!timerHandler.h@{timerHandler.h}}
+\doxysubsubsection{\texorpdfstring{timerStart()}{timerStart()}}
+{\footnotesize\ttfamily \label{timerHandler_8h_af712abccf957cacf3c79c01077529623} 
+void timer\+Start (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{TIMx}{, }\item[{uint16\+\_\+t}]{prescaler}{, }\item[{uint32\+\_\+t}]{reload}{, }\item[{uint8\+\_\+t}]{count\+Form}{}\end{DoxyParamCaption})}
+
+
+
+Timer Configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & Struct TIMER that represents the timer to be configured \\
+\hline
+{\em prescaler} & Value that divides the clock, originally 86Mhz \\
+\hline
+{\em reload} & Value to be putted on the ARR register, reloading the timer each time it ends \\
+\hline
+{\em count\+Form} & An element of the count form enum that represents the way that the timer will count(ascendent, descendent, up/\+down) \\
+\hline
+\end{DoxyParams}

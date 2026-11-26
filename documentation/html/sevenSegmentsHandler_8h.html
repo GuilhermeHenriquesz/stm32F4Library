@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stm32F4Library: sevenSegmentsHandler.h File Reference</title>
+<title>stm32F4Library: Core/Inc/sevenSegmentsHandler.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -121,58 +121,44 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sevenSegmentsH
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a4dec249e8e8aa78e6c62c20790559920" id="r_a4dec249e8e8aa78e6c62c20790559920"><td class="memItemLeft"><a class="el" href="#a4dec249e8e8aa78e6c62c20790559920">enum </a>&#160;</td><td class="memItemRight"></td></tr>
-<tr class="memdesc:a4dec249e8e8aa78e6c62c20790559920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to set the numbers by the activation of the segments in display.  <a href="#a4dec249e8e8aa78e6c62c20790559920">More...</a><br /></td></tr>
+<tr class="memitem:a282e736e9eeadd2ac67afce1a5766cd4" id="r_a282e736e9eeadd2ac67afce1a5766cd4"><td class="memItemLeft"><a class="el" href="#a282e736e9eeadd2ac67afce1a5766cd4">enum </a>&#160;</td><td class="memItemRight">{ <br />
+&#160;&#160;<b>ZERO</b> = 0b1111110
+, <b>ONE</b> = 0b0110000
+, <b>TWO</b> = 0b1101101
+, <b>THREE</b> = 0b1111001
+, <br />
+&#160;&#160;<b>FOUR</b> = 0b0110011
+, <b>FIVE</b> = 0b1011011
+, <b>SIX</b> = 0b1011111
+, <b>SEVEN</b> = 0b1110000
+, <br />
+&#160;&#160;<b>EIGHT</b> = 0b1111111
+, <b>NINE</b> = 0b1111011
+, <b>HEX_A</b> = 0b1110111
+, <b>HEX_B</b> = 0b0011111
+, <br />
+&#160;&#160;<b>HEX_C</b> = 0b1001110
+, <b>HEX_D</b> = 0b0111101
+, <b>HEX_E</b> = 0b1001111
+, <b>HEX_F</b> = 0b1000111
+<br />
+ }</td></tr>
+<tr class="memdesc:a282e736e9eeadd2ac67afce1a5766cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to set the numbers by the activation of the segments in display.  <a href="#a282e736e9eeadd2ac67afce1a5766cd4">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6940e9d489f75e6475c364af1d15664a" id="r_a6940e9d489f75e6475c364af1d15664a"><td class="memItemLeft">enum  { ... } &#160;</td><td class="memItemRight"><a class="el" href="#a6940e9d489f75e6475c364af1d15664a">writeInDisplay</a> (<a class="el" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *pins, uint8_t number)</td></tr>
-<tr class="memdesc:a6940e9d489f75e6475c364af1d15664a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a number in seven segments display.  <br /></td></tr>
+<tr class="memitem:a6709b3d960a308c72ca6b490279d736f" id="r_a6709b3d960a308c72ca6b490279d736f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6709b3d960a308c72ca6b490279d736f">writeInDisplay</a> (<a class="el" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *pins, uint8_t number)</td></tr>
+<tr class="memdesc:a6709b3d960a308c72ca6b490279d736f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a number in seven segments display.  <br /></td></tr>
 <tr class="memitem:a610d907a8f5c897a493135241bc98a1a" id="r_a610d907a8f5c897a493135241bc98a1a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a610d907a8f5c897a493135241bc98a1a">startDisplayPins</a> (<a class="el" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *pins)</td></tr>
 <tr class="memdesc:a610d907a8f5c897a493135241bc98a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set some pins preconfigured in GPIO port C.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab284bdf3b32e4fc5d5db7feb9fcfb8f0" id="r_ab284bdf3b32e4fc5d5db7feb9fcfb8f0"><td class="memItemLeft"><a id="ab284bdf3b32e4fc5d5db7feb9fcfb8f0" name="ab284bdf3b32e4fc5d5db7feb9fcfb8f0"></a>
-&#160;</td><td class="memItemRight"><b>ZERO</b> = 0b1111110</td></tr>
-<tr class="memitem:a2cb8470634cc90a55800ee95f967eade" id="r_a2cb8470634cc90a55800ee95f967eade"><td class="memItemLeft"><a id="a2cb8470634cc90a55800ee95f967eade" name="a2cb8470634cc90a55800ee95f967eade"></a>
-&#160;</td><td class="memItemRight"><b>ONE</b> = 0b0110000</td></tr>
-<tr class="memitem:a0673b633b0851b14ed38bd96f5781290" id="r_a0673b633b0851b14ed38bd96f5781290"><td class="memItemLeft"><a id="a0673b633b0851b14ed38bd96f5781290" name="a0673b633b0851b14ed38bd96f5781290"></a>
-&#160;</td><td class="memItemRight"><b>TWO</b> = 0b1101101</td></tr>
-<tr class="memitem:a3ad256299172be144b152fb1a36504b5" id="r_a3ad256299172be144b152fb1a36504b5"><td class="memItemLeft"><a id="a3ad256299172be144b152fb1a36504b5" name="a3ad256299172be144b152fb1a36504b5"></a>
-&#160;</td><td class="memItemRight"><b>THREE</b> = 0b1111001</td></tr>
-<tr class="memitem:a0a04eb9a514fbe0829cf48049cc69fc7" id="r_a0a04eb9a514fbe0829cf48049cc69fc7"><td class="memItemLeft"><a id="a0a04eb9a514fbe0829cf48049cc69fc7" name="a0a04eb9a514fbe0829cf48049cc69fc7"></a>
-&#160;</td><td class="memItemRight"><b>FOUR</b> = 0b0110001</td></tr>
-<tr class="memitem:a15577cd9eefc9ddd9e2815f341d7c720" id="r_a15577cd9eefc9ddd9e2815f341d7c720"><td class="memItemLeft"><a id="a15577cd9eefc9ddd9e2815f341d7c720" name="a15577cd9eefc9ddd9e2815f341d7c720"></a>
-&#160;</td><td class="memItemRight"><b>FIVE</b> = 0b1011011</td></tr>
-<tr class="memitem:ab2df19d47ce6f09ac1b502c209f4698f" id="r_ab2df19d47ce6f09ac1b502c209f4698f"><td class="memItemLeft"><a id="ab2df19d47ce6f09ac1b502c209f4698f" name="ab2df19d47ce6f09ac1b502c209f4698f"></a>
-&#160;</td><td class="memItemRight"><b>SIX</b> = 0b1011111</td></tr>
-<tr class="memitem:a76b50d855e8fe3ebc7de8a9d0e35e5f8" id="r_a76b50d855e8fe3ebc7de8a9d0e35e5f8"><td class="memItemLeft"><a id="a76b50d855e8fe3ebc7de8a9d0e35e5f8" name="a76b50d855e8fe3ebc7de8a9d0e35e5f8"></a>
-&#160;</td><td class="memItemRight"><b>SEVEN</b> = 0b1000110</td></tr>
-<tr class="memitem:a1562f79a436bcc552b7861b4c770ae72" id="r_a1562f79a436bcc552b7861b4c770ae72"><td class="memItemLeft"><a id="a1562f79a436bcc552b7861b4c770ae72" name="a1562f79a436bcc552b7861b4c770ae72"></a>
-&#160;</td><td class="memItemRight"><b>EIGHT</b> = 0b1111111</td></tr>
-<tr class="memitem:ad55f564ff7fc61ce422a41d50b47244f" id="r_ad55f564ff7fc61ce422a41d50b47244f"><td class="memItemLeft"><a id="ad55f564ff7fc61ce422a41d50b47244f" name="ad55f564ff7fc61ce422a41d50b47244f"></a>
-&#160;</td><td class="memItemRight"><b>NINE</b> = 0b1111011</td></tr>
-<tr class="memitem:aac84e0b07b0356b08d6092a177fc1ac6" id="r_aac84e0b07b0356b08d6092a177fc1ac6"><td class="memItemLeft"><a id="aac84e0b07b0356b08d6092a177fc1ac6" name="aac84e0b07b0356b08d6092a177fc1ac6"></a>
-&#160;</td><td class="memItemRight"><b>HEX_A</b> = 0b1110111</td></tr>
-<tr class="memitem:a76404bd119d993208b5b5eda53436b4e" id="r_a76404bd119d993208b5b5eda53436b4e"><td class="memItemLeft"><a id="a76404bd119d993208b5b5eda53436b4e" name="a76404bd119d993208b5b5eda53436b4e"></a>
-&#160;</td><td class="memItemRight"><b>HEX_B</b> = 0b0011111</td></tr>
-<tr class="memitem:addb11ea5e16d5a1f3604b10be1a364b4" id="r_addb11ea5e16d5a1f3604b10be1a364b4"><td class="memItemLeft"><a id="addb11ea5e16d5a1f3604b10be1a364b4" name="addb11ea5e16d5a1f3604b10be1a364b4"></a>
-&#160;</td><td class="memItemRight"><b>HEX_C</b> = 0b1001110</td></tr>
-<tr class="memitem:a50a22df5724e34f4800c842b509854fe" id="r_a50a22df5724e34f4800c842b509854fe"><td class="memItemLeft"><a id="a50a22df5724e34f4800c842b509854fe" name="a50a22df5724e34f4800c842b509854fe"></a>
-&#160;</td><td class="memItemRight"><b>HEX_D</b> = 0b0111101</td></tr>
-<tr class="memitem:a4116354798fbd3b178e6754cf45b0ff4" id="r_a4116354798fbd3b178e6754cf45b0ff4"><td class="memItemLeft"><a id="a4116354798fbd3b178e6754cf45b0ff4" name="a4116354798fbd3b178e6754cf45b0ff4"></a>
-&#160;</td><td class="memItemRight"><b>HEX_E</b> = 0b1001111</td></tr>
-<tr class="memitem:a31e50c14c7b6858dac2c473e9cb08a7b" id="r_a31e50c14c7b6858dac2c473e9cb08a7b"><td class="memItemLeft"><a id="a31e50c14c7b6858dac2c473e9cb08a7b" name="a31e50c14c7b6858dac2c473e9cb08a7b"></a>
-&#160;</td><td class="memItemRight"><b>HEX_F</b> = 0b1000111</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handle with Seven Segment Display. </p>
 <dl class="section author"><dt>Author</dt><dd>Fabio Henrique and Guilherme Henriques </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026-09-17 </dd></dl>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="a4dec249e8e8aa78e6c62c20790559920" name="a4dec249e8e8aa78e6c62c20790559920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dec249e8e8aa78e6c62c20790559920">&#9670;&#160;</a></span>anonymous enum</h2>
+<a id="a282e736e9eeadd2ac67afce1a5766cd4" name="a282e736e9eeadd2ac67afce1a5766cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a282e736e9eeadd2ac67afce1a5766cd4">&#9670;&#160;</a></span>anonymous enum</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,14 +200,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6940e9d489f75e6475c364af1d15664a" name="a6940e9d489f75e6475c364af1d15664a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6940e9d489f75e6475c364af1d15664a">&#9670;&#160;</a></span>writeInDisplay()</h2>
+<a id="a6709b3d960a308c72ca6b490279d736f" name="a6709b3d960a308c72ca6b490279d736f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6709b3d960a308c72ca6b490279d736f">&#9670;&#160;</a></span>writeInDisplay()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum @044202350237360063360101037111045303236030355307 writeInDisplay </td>
+          <td class="memname">void writeInDisplay </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *</td>          <td class="paramname"><span class="paramname"><em>pins</em></span>, </td>
         </tr>
@@ -257,7 +243,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="sevenSegmentsHandler_8h.html">sevenSegmentsHandler.h</a></li>
+    <li class="navelem"><b>Core</b></li><li class="navelem"><b>Inc</b></li><li class="navelem"><a href="sevenSegmentsHandler_8h.html">sevenSegmentsHandler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

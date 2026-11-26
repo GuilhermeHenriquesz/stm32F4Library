@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stm32F4Library: sevenSegmentsHandler.h Source File</title>
+<title>stm32F4Library: Core/Inc/sevenSegmentsHandler.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -123,10 +123,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sevenSegmentsH
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    ONE = 0b0110000,</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    TWO = 0b1101101,</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    THREE = 0b1111001,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    FOUR = 0b0110001,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    FOUR = 0b0110011,</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    FIVE = 0b1011011,</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    SIX = 0b1011111,</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    SEVEN = 0b1000110,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    SEVEN = 0b1110000,</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    EIGHT = 0b1111111,</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    NINE = 0b1111011,</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    HEX_A = 0b1110111,</div>
@@ -135,22 +135,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('sevenSegmentsH
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    HEX_D = 0b0111101,</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    HEX_E = 0b1001111,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    HEX_F = 0b1000111,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> writeInDisplay(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* pins, uint8_t number);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="sevenSegmentsHandler_8h.html#a6709b3d960a308c72ca6b490279d736f">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sevenSegmentsHandler_8h.html#a6709b3d960a308c72ca6b490279d736f">writeInDisplay</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* pins, uint8_t number);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> startDisplayPins(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *pins);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="sevenSegmentsHandler_8h.html#a610d907a8f5c897a493135241bc98a1a">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sevenSegmentsHandler_8h.html#a610d907a8f5c897a493135241bc98a1a">startDisplayPins</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *pins);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agpioHandler_8h_html"><div class="ttname"><a href="gpioHandler_8h.html">gpioHandler.h</a></div><div class="ttdoc">Handle with GPIO.</div></div>
 <div class="ttc" id="agpioHandler_8h_html_ab56221afe20077413f85b299ce98f3de"><div class="ttname"><a href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a></div><div class="ttdeci">struct pin Pin</div><div class="ttdoc">Abstract pins of GPIOs.</div></div>
+<div class="ttc" id="asevenSegmentsHandler_8h_html_a610d907a8f5c897a493135241bc98a1a"><div class="ttname"><a href="sevenSegmentsHandler_8h.html#a610d907a8f5c897a493135241bc98a1a">startDisplayPins</a></div><div class="ttdeci">void startDisplayPins(Pin *pins)</div><div class="ttdoc">Set some pins preconfigured in GPIO port C.</div></div>
+<div class="ttc" id="asevenSegmentsHandler_8h_html_a6709b3d960a308c72ca6b490279d736f"><div class="ttname"><a href="sevenSegmentsHandler_8h.html#a6709b3d960a308c72ca6b490279d736f">writeInDisplay</a></div><div class="ttdeci">void writeInDisplay(Pin *pins, uint8_t number)</div><div class="ttdoc">Write a number in seven segments display.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="sevenSegmentsHandler_8h.html">sevenSegmentsHandler.h</a></li>
+    <li class="navelem"><b>Core</b></li><li class="navelem"><b>Inc</b></li><li class="navelem"><a href="sevenSegmentsHandler_8h.html">sevenSegmentsHandler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

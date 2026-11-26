@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['usartget_0',['usartGet',['../usartHandler_8h.html#a63f71fb67914a746f705ed45fd4cedf0',1,'usartHandler.c']]],
-  ['usartsend_1',['usartSend',['../usartHandler_8h.html#a1ecf2e92d76b89a6a6e8e75e5eee55c3',1,'usartHandler.c']]]
+  ['timerchannelstart_0',['timerChannelStart',['../timerHandler_8h.html#aa6a0f928469179253af980a6eb56cbcf',1,'timerHandler.h']]],
+  ['timerinterruption_1',['timerInterruption',['../timerHandler_8h.html#ae75792d4c23a5171441daa1967fe89a2',1,'timerHandler.h']]],
+  ['timerstart_2',['timerStart',['../timerHandler_8h.html#af712abccf957cacf3c79c01077529623',1,'timerHandler.h']]],
+  ['togglepin_3',['togglePin',['../gpioHandler_8h.html#a75d8b8f0d0cb8d42f140e7fd14a2cef5',1,'gpioHandler.h']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stm32F4Library: gpioHandler.h Source File</title>
+<title>stm32F4Library: Core/Inc/gpioHandler.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -133,32 +133,63 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gpioHandler_8h
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    OUTPUT,</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    ALTERNATE,</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ANALOG</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> delay(uint32_t ms);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> microDelay(uint32_t microSecond);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> writeHigh(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> writeLow(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> togglePin(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>uint8_t getPinStatus(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keywordtype">void</span> virtualPwmWrite(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>, uint8_t value);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">void</span> pinStart(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *<a class="code hl_struct" href="structpin.html">pin</a>, GPIO_TypeDef* port, uint8_t index, uint8_t mode);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keywordtype">void</span> setPullDown(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keywordtype">void</span> setPullUp(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>uint8_t readPin(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">enum</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    ALTFUNC0,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    ALTFUNC1,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    ALTFUNC2,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ALTFUNC3,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    ALTFUNC4,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    ALTFUNC5,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    ALTFUNC6,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    ALTFUNC7,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    ALTFUNC8,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ALTFUNC9,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    ALTFUNC10,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    ALTFUNC11,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    ALTFUNC12,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    ALTFUNC13,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    ALTFUNC14,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    ALTFUNC15</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#afac684914a9c0d5d3fda6a1b3fac0cf2">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#afac684914a9c0d5d3fda6a1b3fac0cf2">writeHigh</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a2821ea10e2e3d00fa5f2908309454731">   73</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a2821ea10e2e3d00fa5f2908309454731">writeLow</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a75d8b8f0d0cb8d42f140e7fd14a2cef5">   80</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a75d8b8f0d0cb8d42f140e7fd14a2cef5">togglePin</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a579dccbeb1f944a7cfc52deeb5455881">   88</a></span>uint8_t <a class="code hl_function" href="gpioHandler_8h.html#a579dccbeb1f944a7cfc52deeb5455881">getPinStatus</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#ae7c0508e690b144ff7f11adac07ad796">   96</a></span>uint16_t <a class="code hl_function" href="gpioHandler_8h.html#ae7c0508e690b144ff7f11adac07ad796">getPortStatus</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a96238e2b428d2a115ea7dff223d2e53b">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a96238e2b428d2a115ea7dff223d2e53b">virtualPwmWrite</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>, uint8_t value);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a66097f7bf35e3caade8d18e25e978b40">  115</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a66097f7bf35e3caade8d18e25e978b40">pinStart</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a> *<a class="code hl_struct" href="structpin.html">pin</a>, GPIO_TypeDef* port, uint8_t index, uint8_t mode);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a72938a63988db1169dbf06233c812da7">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a72938a63988db1169dbf06233c812da7">setPullDown</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a6542bc2f5bd28b1f23cd9ae34a4c98f0">  129</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a6542bc2f5bd28b1f23cd9ae34a4c98f0">setPullUp</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#ac0a41e1bbc23adfb37877f09263a7413">  137</a></span>uint8_t <a class="code hl_function" href="gpioHandler_8h.html#ac0a41e1bbc23adfb37877f09263a7413">readPin</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="gpioHandler_8h.html#a2d53a70036a006552bd80533ebe25057">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gpioHandler_8h.html#a2d53a70036a006552bd80533ebe25057">alternativeFunction</a>(<a class="code hl_typedef" href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a>* <a class="code hl_struct" href="structpin.html">pin</a>, uint8_t function);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agpioHandler_8h_html_a2821ea10e2e3d00fa5f2908309454731"><div class="ttname"><a href="gpioHandler_8h.html#a2821ea10e2e3d00fa5f2908309454731">writeLow</a></div><div class="ttdeci">void writeLow(Pin *pin)</div><div class="ttdoc">Write low state in a output pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a2d53a70036a006552bd80533ebe25057"><div class="ttname"><a href="gpioHandler_8h.html#a2d53a70036a006552bd80533ebe25057">alternativeFunction</a></div><div class="ttdeci">void alternativeFunction(Pin *pin, uint8_t function)</div><div class="ttdoc">Set an alternative function for a pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a579dccbeb1f944a7cfc52deeb5455881"><div class="ttname"><a href="gpioHandler_8h.html#a579dccbeb1f944a7cfc52deeb5455881">getPinStatus</a></div><div class="ttdeci">uint8_t getPinStatus(Pin *pin)</div><div class="ttdoc">Get the status of a output pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a6542bc2f5bd28b1f23cd9ae34a4c98f0"><div class="ttname"><a href="gpioHandler_8h.html#a6542bc2f5bd28b1f23cd9ae34a4c98f0">setPullUp</a></div><div class="ttdeci">void setPullUp(Pin *pin)</div><div class="ttdoc">Set pull up resistor to a input pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a66097f7bf35e3caade8d18e25e978b40"><div class="ttname"><a href="gpioHandler_8h.html#a66097f7bf35e3caade8d18e25e978b40">pinStart</a></div><div class="ttdeci">void pinStart(Pin *pin, GPIO_TypeDef *port, uint8_t index, uint8_t mode)</div><div class="ttdoc">Start the struct pin, set the mode of the pin and enable the pin port clock.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a72938a63988db1169dbf06233c812da7"><div class="ttname"><a href="gpioHandler_8h.html#a72938a63988db1169dbf06233c812da7">setPullDown</a></div><div class="ttdeci">void setPullDown(Pin *pin)</div><div class="ttdoc">Set pull down resistor to a input pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a75d8b8f0d0cb8d42f140e7fd14a2cef5"><div class="ttname"><a href="gpioHandler_8h.html#a75d8b8f0d0cb8d42f140e7fd14a2cef5">togglePin</a></div><div class="ttdeci">void togglePin(Pin *pin)</div><div class="ttdoc">Alternate the state in a output pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_a96238e2b428d2a115ea7dff223d2e53b"><div class="ttname"><a href="gpioHandler_8h.html#a96238e2b428d2a115ea7dff223d2e53b">virtualPwmWrite</a></div><div class="ttdeci">void virtualPwmWrite(Pin *pin, uint8_t value)</div><div class="ttdoc">Write a pwm in software in a gpio pin.</div></div>
 <div class="ttc" id="agpioHandler_8h_html_ab56221afe20077413f85b299ce98f3de"><div class="ttname"><a href="gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de">Pin</a></div><div class="ttdeci">struct pin Pin</div><div class="ttdoc">Abstract pins of GPIOs.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_ac0a41e1bbc23adfb37877f09263a7413"><div class="ttname"><a href="gpioHandler_8h.html#ac0a41e1bbc23adfb37877f09263a7413">readPin</a></div><div class="ttdeci">uint8_t readPin(Pin *pin)</div><div class="ttdoc">Read a input pin.</div></div>
+<div class="ttc" id="agpioHandler_8h_html_ae7c0508e690b144ff7f11adac07ad796"><div class="ttname"><a href="gpioHandler_8h.html#ae7c0508e690b144ff7f11adac07ad796">getPortStatus</a></div><div class="ttdeci">uint16_t getPortStatus(Pin *pin)</div><div class="ttdoc">Get the status of a port (Output or Input mode).</div></div>
+<div class="ttc" id="agpioHandler_8h_html_afac684914a9c0d5d3fda6a1b3fac0cf2"><div class="ttname"><a href="gpioHandler_8h.html#afac684914a9c0d5d3fda6a1b3fac0cf2">writeHigh</a></div><div class="ttdeci">void writeHigh(Pin *pin)</div><div class="ttdoc">Write high state in a output pin.</div></div>
 <div class="ttc" id="astructpin_html"><div class="ttname"><a href="structpin.html">pin</a></div><div class="ttdoc">Abstract pins of GPIOs.</div><div class="ttdef"><b>Definition</b> gpioHandler.h:21</div></div>
 <div class="ttc" id="astructpin_html_a3aed8e20f29b2f38880a07c3f73b5128"><div class="ttname"><a href="structpin.html#a3aed8e20f29b2f38880a07c3f73b5128">pin::index</a></div><div class="ttdeci">uint8_t index</div><div class="ttdef"><b>Definition</b> gpioHandler.h:23</div></div>
 <div class="ttc" id="astructpin_html_a5ce5252516bd08dcb164ce999e0ea1a1"><div class="ttname"><a href="structpin.html#a5ce5252516bd08dcb164ce999e0ea1a1">pin::port</a></div><div class="ttdeci">GPIO_TypeDef * port</div><div class="ttdef"><b>Definition</b> gpioHandler.h:22</div></div>
@@ -168,7 +199,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gpioHandler_8h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="gpioHandler_8h.html">gpioHandler.h</a></li>
+    <li class="navelem"><b>Core</b></li><li class="navelem"><b>Inc</b></li><li class="navelem"><a href="gpioHandler_8h.html">gpioHandler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

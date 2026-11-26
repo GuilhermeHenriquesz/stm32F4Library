@@ -2,9 +2,9 @@ var gpioHandler_8h =
 [
     [ "pin", "structpin.html", "structpin" ],
     [ "Pin", "gpioHandler_8h.html#ab56221afe20077413f85b299ce98f3de", null ],
-    [ "delay", "gpioHandler_8h.html#acb5a9898b0a5ed8695686b5ea2231bb7", null ],
+    [ "alternativeFunction", "gpioHandler_8h.html#a2d53a70036a006552bd80533ebe25057", null ],
     [ "getPinStatus", "gpioHandler_8h.html#a579dccbeb1f944a7cfc52deeb5455881", null ],
-    [ "microDelay", "gpioHandler_8h.html#a95c290c60a77a6c9ae61b183f0d537ee", null ],
+    [ "getPortStatus", "gpioHandler_8h.html#ae7c0508e690b144ff7f11adac07ad796", null ],
     [ "pinStart", "gpioHandler_8h.html#a66097f7bf35e3caade8d18e25e978b40", null ],
     [ "readPin", "gpioHandler_8h.html#ac0a41e1bbc23adfb37877f09263a7413", null ],
     [ "setPullDown", "gpioHandler_8h.html#a72938a63988db1169dbf06233c812da7", null ],

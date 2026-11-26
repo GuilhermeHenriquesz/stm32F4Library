@@ -1,0 +1,148 @@
+\doxysection{Core/\+\+Inc/\+dac\+Handler.h File Reference}
+\hypertarget{dacHandler_8h}{}\label{dacHandler_8h}\index{Core/Inc/dacHandler.h@{Core/Inc/dacHandler.h}}
+
+
+Handle with GPIO.  
+
+
+{\ttfamily \+\#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{dacHandler_8h_ab91d6eccb77bac6cdf923ef6fed3fd9a}\label{dacHandler_8h_ab91d6eccb77bac6cdf923ef6fed3fd9a} 
+\doxymbox{\hyperlink{dacHandler_8h_ab91d6eccb77bac6cdf923ef6fed3fd9a}{enum }}\{ {\bfseries DAC\+\_\+\+PA4}
+, {\bfseries DAC\+\_\+\+PA5}
+ \}
+\item 
+\Hypertarget{dacHandler_8h_aa71868361d9804fc6d5618622db861c1}\label{dacHandler_8h_aa71868361d9804fc6d5618622db861c1} 
+\doxymbox{\hyperlink{dacHandler_8h_aa71868361d9804fc6d5618622db861c1}{enum }}\{ {\bfseries DHR8R}
+, {\bfseries DHR12L}
+, {\bfseries DHR12R}
+ \}
+\item 
+\Hypertarget{dacHandler_8h_a86e726d648af4e409e7298f1121e08e3}\label{dacHandler_8h_a86e726d648af4e409e7298f1121e08e3} 
+\doxymbox{\hyperlink{dacHandler_8h_a86e726d648af4e409e7298f1121e08e3}{enum }}\{ {\bfseries DISABLEDWAVE}
+, {\bfseries NOISEWAVE}
+, {\bfseries TRIANGLEWAVE}
+ \}
+\item 
+\Hypertarget{dacHandler_8h_a6be82dae8e926cf4ee0380da59538aae}\label{dacHandler_8h_a6be82dae8e926cf4ee0380da59538aae} 
+\doxymbox{\hyperlink{dacHandler_8h_a6be82dae8e926cf4ee0380da59538aae}{enum }}\{ \newline
+{\bfseries AMP1\+BIT}
+, {\bfseries AMP2\+BITS}
+, {\bfseries AMP3\+BITS}
+, {\bfseries AMP4\+BITS}
+, \newline
+{\bfseries AMP5\+BITS}
+, {\bfseries AMP6\+BITS}
+, {\bfseries AMP7\+BITS}
+, {\bfseries AMP8\+BITS}
+, \newline
+{\bfseries AMP9\+BITS}
+, {\bfseries AMP10\+BITS}
+, {\bfseries AMP11\+BITS}
+, {\bfseries AMP12\+BITS}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{dacHandler_8h_a1495bc2488762f4a74ff90914718c201}{dac\+Start}} (uint8\+\_\+t pin, uint8\+\_\+t resolution)
+\begin{DoxyCompactList}\small\item\em Start the DAC. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{dacHandler_8h_af31fb57956fb8b52a86ce9bc6c9e2a89}{dac\+Start2}} (uint8\+\_\+t pin, uint8\+\_\+t resolution, uint8\+\_\+t waveform, uint8\+\_\+t amplitude)
+\begin{DoxyCompactList}\small\item\em Start the DAC with more parameters. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{dacHandler_8h_a26c8cbd650bb74096e639b25e4ed8f27}{dac\+Set\+Value}} (uint8\+\_\+t pin, uint8\+\_\+t resolution, uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set a value to be wrote by the DAC. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{dacHandler_8h_ae9ff4a620de0ca4b2963d0b0487c62e1}{dac\+Trigger}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Trigger the DAC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handle with GPIO. 
+
+\begin{DoxyAuthor}{Authors}
+Fabio Henrique and Guilherme Henriques
+\end{DoxyAuthor}
+
+
+\begin{DoxyDate}{Date}
+2026-\/09-\/17 
+\end{DoxyDate}
+
+
+\label{dacHandler_8h_doc-func-members}
+\Hypertarget{dacHandler_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{dacHandler_8h_a26c8cbd650bb74096e639b25e4ed8f27}\index{dacHandler.h@{dacHandler.h}!dacSetValue@{dacSetValue}}
+\index{dacSetValue@{dacSetValue}!dacHandler.h@{dacHandler.h}}
+\doxysubsubsection{\texorpdfstring{dacSetValue()}{dacSetValue()}}
+{\footnotesize\ttfamily \label{dacHandler_8h_a26c8cbd650bb74096e639b25e4ed8f27} 
+void dac\+Set\+Value (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{resolution}{, }\item[{uint16\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set a value to be wrote by the DAC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to use the DAC, see the DAC pin enum for more information \\
+\hline
+{\em resolution} & Resolution of DAC, see the resolution enum for more information \\
+\hline
+{\em value} & value to be wrote \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dacHandler_8h_a1495bc2488762f4a74ff90914718c201}\index{dacHandler.h@{dacHandler.h}!dacStart@{dacStart}}
+\index{dacStart@{dacStart}!dacHandler.h@{dacHandler.h}}
+\doxysubsubsection{\texorpdfstring{dacStart()}{dacStart()}}
+{\footnotesize\ttfamily \label{dacHandler_8h_a1495bc2488762f4a74ff90914718c201} 
+void dac\+Start (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{resolution}{}\end{DoxyParamCaption})}
+
+
+
+Start the DAC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to use the DAC, see the DAC pin enum for more information \\
+\hline
+{\em resolution} & Resolution of DAC, see the resolution enum for more information \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dacHandler_8h_af31fb57956fb8b52a86ce9bc6c9e2a89}\index{dacHandler.h@{dacHandler.h}!dacStart2@{dacStart2}}
+\index{dacStart2@{dacStart2}!dacHandler.h@{dacHandler.h}}
+\doxysubsubsection{\texorpdfstring{dacStart2()}{dacStart2()}}
+{\footnotesize\ttfamily \label{dacHandler_8h_af31fb57956fb8b52a86ce9bc6c9e2a89} 
+void dac\+Start2 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{resolution}{, }\item[{uint8\+\_\+t}]{waveform}{, }\item[{uint8\+\_\+t}]{amplitude}{}\end{DoxyParamCaption})}
+
+
+
+Start the DAC with more parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to use the DAC, see the DAC pin enum for more information \\
+\hline
+{\em resolution} & Resolution of DAC, see the resolution enum for more information \\
+\hline
+{\em waveform} & Set the waveform of the DAC, see DAC wave forms enum for more information \\
+\hline
+{\em amplitude} & Set the amplitude of the wave, see the amp enum for more information \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dacHandler_8h_ae9ff4a620de0ca4b2963d0b0487c62e1}\index{dacHandler.h@{dacHandler.h}!dacTrigger@{dacTrigger}}
+\index{dacTrigger@{dacTrigger}!dacHandler.h@{dacHandler.h}}
+\doxysubsubsection{\texorpdfstring{dacTrigger()}{dacTrigger()}}
+{\footnotesize\ttfamily \label{dacHandler_8h_ae9ff4a620de0ca4b2963d0b0487c62e1} 
+void dac\+Trigger (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Trigger the DAC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{gpioHandler_8h_ab56221afe20077413f85b299ce98f3de}{Pin} to use the DAC, see the DAC pin enum for more information \\
+\hline
+\end{DoxyParams}
