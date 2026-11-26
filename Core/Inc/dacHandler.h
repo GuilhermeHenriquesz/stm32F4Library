@@ -45,10 +45,37 @@ enum {
     AMP12BITS
 };
 
-
+/**
+ * @brief Start the DAC
+ * 
+ * @param pin Pin to use the DAC, see the DAC pin enum for more information
+ * @param resolution Resolution of DAC, see the resolution enum for more information
+ */
 void dacStart(uint8_t pin, uint8_t resolution);
+
+/**
+ * @brief Start the DAC with more parameters
+ * 
+ * @param pin Pin to use the DAC, see the DAC pin enum for more information
+ * @param resolution Resolution of DAC, see the resolution enum for more information
+ * @param waveform Set the waveform of the DAC, see DAC wave forms enum for more information
+ * @param amplitude Set the amplitude of the wave, see the amp enum for more information
+ */
 void dacStart2(uint8_t pin, uint8_t resolution, uint8_t waveform, uint8_t amplitude);
+/**
+ * @brief Set a value to be wrote by the DAC
+ * 
+ * @param pin Pin to use the DAC, see the DAC pin enum for more information
+ * @param resolution Resolution of DAC, see the resolution enum for more information
+ * @param value value to be wrote
+ */
 void dacSetValue(uint8_t pin, uint8_t resolution, uint16_t value);
+
+/**
+ * @brief Trigger the DAC
+ * 
+ * @param pin Pin to use the DAC, see the DAC pin enum for more information
+ */
 void dacTrigger(uint8_t pin);
 
 

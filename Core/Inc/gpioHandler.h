@@ -34,6 +34,10 @@ enum{
 	ANALOG
 };
 
+/**
+ * @brief Enumerate alternate functions for the pins
+ * 
+ */
 enum{
     ALTFUNC0,
     ALTFUNC1,
@@ -132,6 +136,12 @@ void setPullUp(Pin* pin);
  */
 uint8_t readPin(Pin* pin);
 
+/**
+ * @brief Set an alternative function for a pin
+ * 
+ * @param pin Struct pin to be setted
+ * @param function the alternative function to be setted, see the AltFunc enum for more informations
+ */
 void alternativeFunction(Pin* pin, uint8_t function);
 
 #endif

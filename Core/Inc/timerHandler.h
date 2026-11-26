@@ -13,10 +13,14 @@
 
 static uint8_t isInitiated = 0;
 
+/**
+ * @brief TimerChannel struct to abstract the channel struct
+ * 
+ */
 typedef struct{
-    volatile uint32_t* controlRegister;
-    volatile uint32_t* captureCompareMode;
-    volatile uint32_t* captureCompare;
+    volatile uint32_t* controlRegister; /**<A control register of the struct TIMER */
+    volatile uint32_t* captureCompareMode; /**<The register CCRM of the struct TIMER */
+    volatile uint32_t* captureCompare; /**<The register CCR of the struct TIMER */
 }TimerChannel;
 
 typedef void (*function)(void);

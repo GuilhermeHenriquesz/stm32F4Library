@@ -26,4 +26,10 @@ void usartSend(USART_TypeDef* porta, char c);
  */
 char usartGet(USART_TypeDef* porta);
 
+/**
+ * @brief Init the USART communication with the PC
+ *
+ */
+void usartInit()
+
 #endif
