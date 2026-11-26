@@ -63,9 +63,9 @@ uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx);
 
 void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizePins);
 
-void initAdcInterrupt(ADC_Typedef* ADCx, function func);
+void initAdcInterrupt(ADC_TypeDef* ADCx, function func);
 
-void getAdcInterruptConversion(ADC_Typedef* ADCx);
+void getAdcInterruptConversion(ADC_TypeDef* ADCx);
 
 void adcTemperatureSensor(void);
 
