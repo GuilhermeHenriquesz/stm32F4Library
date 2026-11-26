@@ -45,15 +45,26 @@ void adcMultiStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t 
         }
     }
 
-    ADC->CCR |= (0b01 << 16); // Set the prescaler
+    // Configura o tamanho da sequência
+    ADCx->SQR1 &= ~(0xF << 20); 
+    ADCx->SQR1 |= ((sizePins - 1) << 20);
 
-    ADCx->CR1 |= ADC_CR1_SCAN;  //habilita o escaneamento de canais
-    ADCx->CR2 |= ADC_CR2_EOCS;  //bit EOC setado ao final de cada conversão
+    // Configura o prescaler
+    ADC->CCR &= ~(0b11 << 16);
+    ADC->CCR |= (0b01 << 16);
+    
+    // Habilita o escaneamento de canais
+    ADCx->CR1 |= ADC_CR1_SCAN;
+    
+    // Configura EOC ao final de cada conversão
+    ADCx->CR2 |= ADC_CR2_EOCS;
 
-    ADCx->CR1 &= ~ADC_CR1_RES;      //limpa o campo da resolução
-    ADCx->CR1 |= resolution << 24;
+    // Configura resolução
+    ADCx->CR1 &= ~ADC_CR1_RES;
+    ADCx->CR1 |= (resolution << 24);
 
-    for (uint8_t i = 0; i < sizePins; i++) // Select the sample time
+    // Select the sample time
+    for (uint8_t i = 0; i < sizePins; i++) 
     {
         if (pins[i] <= 9)
         {
@@ -66,9 +77,6 @@ void adcMultiStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t 
             ADCx->SMPR1 |=  (0b111 << ((pins[i] - 10) * 3));
         }
     }
-
-    ADCx->SQR1 &= ~(0xF << 20);				//limpa o campo de bits
-    ADCx->SQR1 |= (sizePins - 1) << 20;	//escreve a quantidade de canais a ser convertido
 
     ADCx->CR2 |= ADC_CR2_ADON;
     delay(1);    //aguarda o ADC iniciar
@@ -123,9 +131,25 @@ uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx){
 }
 
 void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizePins){
+    // ADCx->CR2 |= ADC_CR2_SWSTART;
+    // for (uint8_t i = 0; i < sizePins; i++){
+    //     while(!(ADCx->SR & ADC_SR_EOC));
+    //     readPins[i] = ADCx->DR;
+    // }
+    
     ADCx->CR2 |= ADC_CR2_SWSTART;
-    for (uint8_t i = 0; i < sizePins; i++){
-        while(!(ADCx->SR & ADC_SR_EOC));
+    for (uint8_t i = 0; i < sizePins; i++)
+    {
+        uint32_t timeout = 1000000;
+
+        while (!(ADCx->SR & ADC_SR_EOC))
+        {
+            if (--timeout == 0)
+            {
+                printf("%d", i + 1);
+            }
+        }
+
         readPins[i] = ADCx->DR;
     }
 }
