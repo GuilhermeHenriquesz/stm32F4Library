@@ -131,27 +131,27 @@ uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx){
 }
 
 void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizePins){
-    // ADCx->CR2 |= ADC_CR2_SWSTART;
-    // for (uint8_t i = 0; i < sizePins; i++){
-    //     while(!(ADCx->SR & ADC_SR_EOC));
-    //     readPins[i] = ADCx->DR;
-    // }
-    
     ADCx->CR2 |= ADC_CR2_SWSTART;
-    for (uint8_t i = 0; i < sizePins; i++)
-    {
-        uint32_t timeout = 1000000;
-
-        while (!(ADCx->SR & ADC_SR_EOC))
-        {
-            if (--timeout == 0)
-            {
-                printf("%d", i + 1);
-            }
-        }
-
+    for (uint8_t i = 0; i < sizePins; i++){
+        while(!(ADCx->SR & ADC_SR_EOC));
         readPins[i] = ADCx->DR;
     }
+    
+    // ADCx->CR2 |= ADC_CR2_SWSTART;
+    // for (uint8_t i = 0; i < sizePins; i++)
+    // {
+    //     uint32_t timeout = 1000000;
+
+    //     while (!(ADCx->SR & ADC_SR_EOC))
+    //     {
+    //         if (--timeout == 0)
+    //         {
+    //             printf("%d", i + 1);
+    //         }
+    //     }
+
+    //     readPins[i] = ADCx->DR;
+    // }
 }
 
 void initAdcInterrupt(ADC_Typedef* ADCx, function func) {
