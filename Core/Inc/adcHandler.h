@@ -55,9 +55,9 @@ enum {
     ADC_PC5
 };
 
-void adcSingleStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resolution);
+void adcSingleStart(ADC_TypeDef* ADCx, uint8_t pin, uint8_t resolution);
 
-void adcMultiStart(uint8_t pin, uint8_t channel, uint8_t resolution, uint8_t sampleTime);
+void adcMultiStart(ADC_TypeDef* ADCx, uint8_t pins[], uint8_t sizePins, uint8_t resolution);
 
 uint16_t getAdcSingleConversion(ADC_TypeDef* ADCx);
 
