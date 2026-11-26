@@ -104,7 +104,7 @@ void adcSingleStart(ADC_TypeDef* ADCx, uint8_t pin, uint8_t resolution){
     if(!(RCC->APB2ENR & (1 << ((uint32_t)ADCx - (ADC1_BASE)) / ((ADC2_BASE) - (ADC1_BASE))) << 8))
         RCC->APB2ENR |= (1 << ((uint32_t)ADCx - (ADC1_BASE)) / ((ADC2_BASE) - (ADC1_BASE))) << 8; // Activate ADC Clock
 
-    ADCx->CCR |= (0b01 << 16); //prescaler /4 (84MHz/4 = 21MHz)
+    ADC->CCR |= (0b01 << 16); //prescaler /4 (84MHz/4 = 21MHz)
 
     ADCx->CR1 &= ~ADC_CR1_SCAN; //desabilita o escaneamento de canais
     ADC1->CR2 &= ~ADC_CR2_EOCS;
@@ -120,7 +120,7 @@ void adcSingleStart(ADC_TypeDef* ADCx, uint8_t pin, uint8_t resolution){
     ADCx->SQR3 |= pin;      //escreve o canal
 
     ADCx->CR2 |= ADC_CR2_ADON;
-    Delay_ms(1);    //aguarda o ADC iniciar
+    delay(1);    //aguarda o ADC iniciar
 
 }
 
@@ -154,14 +154,14 @@ void getAdcMultiConversion(ADC_TypeDef* ADCx, uint16_t readPins[], uint8_t sizeP
     // }
 }
 
-void initAdcInterrupt(ADC_Typedef* ADCx, function func) {
+void initAdcInterrupt(ADC_TypeDef* ADCx, function func) {
     ADC1->CR2 |= ~ADC_CR2_EOCS;  //bit EOC setado ao final de cada sequencia de conversao
     ADCx->CR1 |= ADC_CR1_EOCIE;
     NVIC_EnableIRQ(ADC_IRQn);
     ADC_ISR[0] = func;
 }
 
-void getAdcInterruptConversion(ADC_Typedef* ADCx) {
+void getAdcInterruptConversion(ADC_TypeDef* ADCx) {
     ADCx->CR2 |= ADC_CR2_SWSTART;
 }
 
@@ -224,7 +224,7 @@ void getWatchdog(ADC_TypeDef* ADCx, function func){
 }
 
 void ADC_IRQHandler(void){
-    if(ISR[0] == NULL) return;
+    if(ADC_ISR[0] == NULL) return;
         ADC_ISR[0]();
     ADC1->SR &= ~ADC_SR_AWD; // Reset the interruption flag;
     ADC2->SR &= ~ADC_SR_AWD;
