@@ -20,7 +20,7 @@ void dacStart2(uint8_t pin, uint8_t resolution, uint8_t waveform, uint8_t amplit
     GPIOA->MODER &= ~(0b11 << (pin + 4) * 2);
     GPIOA->MODER |= 0b11 << (pin + 4) * 2; // Set ANALOG mode
 
-    DAC->CR |= (2-waveform) << (6 + 16*pin);    // Select the waveform
+    DAC->CR |= waveform << (6 + 16*pin);    // Select the waveform
     DAC->CR |= amplitude << (8 + 16*pin);       // Select the amplitude
     DAC->CR |= 0b111 << (3 + 16*pin);           // Select the software trigger
     DAC->CR |= 1 << (2 + 16*pin);               // Enable the trigger
